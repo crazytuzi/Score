@@ -1,0 +1,1520 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+	fix Chrome to support very tiny text
+*/
+html { -webkit-text-size-adjust:none; }
+/*
+	first, we reset the padding & margin
+*/
+html * { margin:0; padding:0; border-style: none; border-width: 0; background: transparent; list-style: none; text-decoration:none; vertical-align:middle; }
+body { overflow-y: scroll; }
+body { background: #fff; color: #333; direction: ltr; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 12px; line-height: 1.28; margin: 0; padding: 0; text-align: left; unicode-bidi: embed; }
+
+a { color: #3b5998; cursor: pointer; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul #navAccountInfo a:hover,ul #navAccountInfo a:focus,ul #navAccountInfo a:active { background: none; border: none; color: #3b5998; padding: 4px 10px 5px; text-decoration: underline; }
+
+#blueBar { background-color: #1f4359; left: 0; position: relative; width: 100%; z-index: 3; }
+#blueBar #pageHead { margin: 0 auto; width: 981px; }
+#globalContainer { margin: 0 auto; position: relative; width: 981px;}
+#globalContainer #content { min-height: inherit; }
+#content { margin: 0; padding: 0; width: auto; }
+#pageLogo { float: left; /*margin-left: 0px;*/ z-index: 5; }
+#pageLogo a { background-color: #1f4359; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: 0 6px; background-repeat: no-repeat; display: block; height: 31px; width: 100px; }
+#pageLogo a:hover,#pageLogo a:focus,#pageLogo a:active { background-color: #1f4359; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: -104px 6px; background-repeat: no-repeat; outline: none; }
+#rightCol { float: right; margin-top: -10000px; padding-right: 0; width: 244px; word-wrap: break-word; }
+
+#jewelContainer { float: left; position: relative; z-index: 4; }
+#jewelContainer .hasNew .jewelCount { display: block; }
+#jewelContainer .hasNew,#jewelContainer .openToggler { position: relative; }
+#jewelContainer .openToggler .jewelButton { background-color: #fff !important; border: 1px solid #333; border-bottom: 0; height: 30px; margin: 0; }
+#jewelContainer .openToggler .jewelCount { display: none; }
+
+#messagesJewel a.jewelButton { background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: 2px -20px; background-repeat: no-repeat; }
+#messagesJewel a.jewelButton:active,#messagesJewel a.jewelButton:focus,#messagesJewel a.jewelButton:hover { background-position: 2px -46px; }
+#messagesJewel.hasNew a.jewelButton { background-position: 2px -73px; }
+#messagesJewel.openToggler a.jewelButton { background-position: 2px -73px !important; }
+#requestsJewel a.jewelButton { background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: -48px -20px; background-repeat: no-repeat; }
+#requestsJewel a.jewelButton:active,#requestsJewel a.jewelButton:focus,#requestsJewel a.jewelButton:hover { background-position: -48px -46px; }
+#requestsJewel.hasNew a.jewelButton { background-image: background-position: -48px -73px; }
+#requestsJewel.openToggler a.jewelButton { background-position: -48px -73px !important; }
+#notificationsJewel a.jewelButton { background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: -23px -20px; background-repeat: no-repeat; }
+#notificationsJewel a.jewelButton:active,#notificationsJewel a.jewelButton:focus,#notificationsJewel a.jewelButton:hover { background-position: -23px -46px; }
+#notificationsJewel.hasNew a.jewelButton { background-image: background-position: -23px -73px; }
+#notificationsJewel.openToggler a.jewelButton { background-position: -23px -73px !important; }
+
+#requestsFlyout .fbRequestMessage { display: inline-block; max-width: 169px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#requestsFlyout .fbRequestMessageWrapper { white-space: nowrap; }
+#requestsFlyout .jewelFooter .seeMoreCount { display: block; }
+#requestsFlyout .jewelHighlight .mutualFriends { color: #808080; }
+#requestsFlyout .jewelHighlight .title { color: #3b5998; }
+#requestsFlyout .jewelHighlight a:hover .title,#requestsFlyout .jewelHighlight a:focus .title,#requestsFlyout .jewelHighlight a:active .title,#requestsFlyout .jewelHighlight a:hover .mutualFriends,#requestsFlyout .jewelHighlight a:focus .mutualFriends,#requestsFlyout .jewelHighlight a:active .mutualFriends { color: #fff; }
+#requestsFlyout .jewelHighlight li { padding: 0; }
+#requestsFlyout .jewelRequest .jewelRequestContent { padding-top: 5px; }
+#requestsFlyout .requestLabel { line-height: 12px; }
+#requestsFlyout .title { font-size: 11px; }
+#requestsFlyout li { padding: 4px 8px; }
+#requestsFlyout li.empty,#requestsFlyout .jewelHighlight li.empty { color: #757575; padding: 4px 8px 10px 8px; }
+#requestsFlyout ul.jewelItemList { padding-bottom: 0; padding-top: 4px; }
+
+#messagesFlyout { left: 25px; }
+#messagesFlyout .author { color: #3b5998; font-weight: bold; padding-top: 2px; white-space: normal; }
+#messagesFlyout .content { display: block; width: auto; }
+#messagesFlyout .preview { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#messagesFlyout .subject { color: #333; }
+#messagesFlyout .time { color: #9d9d9d; font-size: 9px; }
+#messagesFlyout a:hover .author,#messagesFlyout a:hover .preview,#messagesFlyout a:hover .subject,#messagesFlyout a:hover .time { color: #fff; }
+#messagesFlyout li a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+#notificationsFlyout { left: 50px; }
+#notificationsFlyout .blueName { color: #3b5998; font-weight: bold; }
+#notificationsFlyout .info { max-width: 259px; word-wrap: break-word; }
+#notificationsFlyout .selected .staticAppIcon { background-position: left; }
+#notificationsFlyout .staticAppIcon { background-position: right; height: 16px; width: 16px; }
+#notificationsFlyout a:hover .blueName { color: #fff; }
+
+#headNav { background-color: #1f4359; border: 1px solid #555; border-bottom: 0; height: 30px; margin-left: 180px; }
+#pageNav a { color: #fff; display: block; display: inline-block; font-weight: bold; height: 22px; padding: 8px 10px 0 10px; text-decoration: none; }
+#pageNav a:hover,#pageNav a:focus,#pageNav a:active { background-color: #285774; outline: none; }
+#pageNav li { float: left; }
+
+#headArea { border-bottom:1px solid #efefef; margin: 0 -20px; padding: 20px; }
+#headArea h2.uiHeaderTitle { font-size:14px; }
+
+#navAccount { position: relative; }
+#navAccount #navAccountLink { padding-right: 16px; zoom: 1; }
+#navAccount #navAccountName { font-size: 13px; font-weight: bold; margin: 0; padding: 0 !important; }
+#navAccount .logoutButton input { outline: 0; text-align: left; width: 100%; }
+#navAccount .logoutButton:hover { text-decoration: none; }
+#navAccount li { display: block; float: none !important; }
+#navAccount ul { background: #fff; border: 1px solid #333; border-bottom: 2px solid #2d4486; display: none; margin-right: -1px; margin-top: -1px; min-width: 200px; padding: 10px 0 5px; position: absolute; right: 0; top: 100%; z-index: 1; }
+#navAccount ul .logoutButton { display: block; }
+#navAccount ul a,#navAccount ul .logoutButton input { color: #3a579a; display: block; font-weight: normal; height: auto; padding: 4px 10px 5px; white-space: nowrap; }
+#navAccount ul a:hover,#navAccount ul a:focus,#navAccount ul a:active,#navAccount .logoutButton:hover input,#navAccount .logoutButton input:active,#navAccount .logoutButton input:focus { background: #6d84b4; border-bottom: 1px solid #3b5998; border-top: 1px solid #3b5998; color: #fff; padding: 3px 10px 4px; text-decoration: none; }
+#navAccount.openToggler ul,.no_js #navAccount:hover ul { display: block; }
+#navAccount.openToggler,.no_js #navAccount:hover { background-color: #fff; border: 1px solid #333; border-bottom: 0; margin: -1px -1px 0; }
+#navAccountInfo { border-bottom: 1px solid #e0e0e0; margin: 5px 4px; min-height: 55px; padding: 0 6px 0 64px; position: relative; }
+#navAccountInfo #navAccountPic { left: -5px; margin: 0; position: absolute; top: -9px; }
+#navAccountInfo #navAccountPic img { height: 50px; width: 50px; }
+#navAccountInfo a { color:#000; }
+#navAccountInfo a:hover { color:#000 !important; border-color:transparent !important; background-color:transparent !important; }
+#navAccountLink .accountPulldown { background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: -100px -85px; background-repeat: no-repeat; left: 5px; position: relative; top: -2px; display: inline-block; height: 16px; width: 7px;}
+
+#mainContainer { display: block; margin-left: -1px; width: 100%; }
+#leftCol { display: none; float: left; padding: 20px 0 0 2px; width: 179px; word-wrap: break-word; min-height: 600px;}
+
+#contentCol { background-color: #fff; padding-top: 15px; }
+#contentArea { margin-right: -1px; padding-left: 1px; word-wrap: break-word; }
+
+#pagefooter { border-top: 0; }
+#pageFooter { color: #737373; font-size: 12px; margin: 0 auto; }
+#pageFooter a { text-decoration: none; white-space: nowrap; }
+#pageFooter a:hover { text-decoration: underline; }
+#pageFooter a:last-child { margin-right: 0; }
+#footerContainer { border-top: 1px solid #eee; margin-bottom: 30px; padding: 8px; position: relative; }
+#footerContainer .navigation { text-align: right; }
+#contentCurve { background-color: #fff; border-bottom: 1px solid #b3b3b3; font-size: 1px; height: 8px; }
+
+.clearfix { zoom: 1; }
+.clearfix:after { clear: both; content: "."; display: block; font-size: 0; height: 0; line-height: 0; visibility: hidden; }
+.rfloat { float: right; }
+.lfloat { float: left; }
+.hidden_elem { display: none !important; }
+.show_elem { display:block !important; }
+.img_border { border: 1px solid #333; }
+
+.triggerJewel { float: left; margin-right: -1px; }
+.triggerJewel .jewelCount { background-color: #00376a; color: #fff; display: none; font-size: 9px; font-weight: bold; padding-bottom: 1px; position: absolute; right: -1px; top: -1px; webkit-border-radius: 2px; z-index: 101; }
+.triggerJewel .jewelCount span { background-color: #f03d25; border: 1px solid #dd3822; border-top: 0; display: block; padding: 1px 1px 0; webkit-border-radius: 2px; }
+.triggerJewel a.jewelButton { display: block; height: 31px; margin: 0 1px; text-decoration: none; width: 24px; }
+.triggerJewel a.jewelButton:active,.triggerJewel a.jewelButton:focus,.triggerJewel a.jewelButton:hover { background-color: #4b67a1; outline: none; text-decoration: none; }
+
+.triggerJewelFlyout { background-color: #fff; border: 1px solid #333; border-bottom: 2px solid #293e6a; left: 0; overflow: visible; position: absolute; top: 30px; width: 330px; z-index: -1; }
+.triggerJewelFlyout .jewelFooter .seeMoreCount { display: none; font-weight: bold; padding: 2px 0 0; }
+.triggerJewelFlyout .jewelFooter a { background-color: #f7f7f7; border-top: 1px solid #e0e0e0; display: block; font-weight: bold; padding: 8px; text-align: center; }
+.triggerJewelFlyout .jewelFooter a:hover .seeMoreCount,.triggerJewelFlyout .jewelFooter a:active .seeMoreCount,.triggerJewelFlyout .jewelFooter a:focus .seeMoreCount { color: #e7e7e7; }
+.triggerJewelFlyout .jewelFooter a:hover,.triggerJewelFlyout .jewelFooter a:active,.triggerJewelFlyout .jewelFooter a:focus { background-color: #6d84b4; border-top: 1px solid #3b5998; color: #fff; outline: none; text-decoration: none; }
+.triggerJewelFlyout .jewelHeader { border-color: #ddd; padding: 7px 8px 7px 8px; }
+.triggerJewelFlyout .jewelHighlight .empty { border: none; padding: 4px 8px; }
+.triggerJewelFlyout .jewelHighlight a:hover span,.triggerJewelFlyout .jewelHighlight a:active span,.triggerJewelFlyout .jewelHighlight a:focus span,.triggerJewelFlyout .jewelHighlight a:hover div,.triggerJewelFlyout .jewelHighlight a:active div,.triggerJewelFlyout .jewelHighlight a:focus div,.triggerJewelFlyout .jewelHighlight li.selected a,.triggerJewelFlyout .jewelHighlight li.selected .timestamp { color: #fff; }
+.triggerJewelFlyout .jewelHighlight li { border-top: 1px solid #e6e6e6; cursor: pointer; }
+.triggerJewelFlyout .jewelHighlight li a { color: #333; display: block; padding: 4px 8px; text-decoration: none; }
+.triggerJewelFlyout .jewelHighlight li a:hover,.triggerJewelFlyout .jewelHighlight li a:active,.triggerJewelFlyout .jewelHighlight li a:focus { background-color: #6d84b4 !important; border-bottom: 1px solid #3b5998; border-top: 1px solid #3b5998; outline: none; padding-bottom: 3px; padding-top: 3px; text-decoration: none; }
+.triggerJewelFlyout .jewelHighlight li:first-child { border-top: none; }
+.triggerJewelFlyout .jewelLoading { display: block; margin: 10px auto; }
+.triggerJewelFlyout .jewelUnread .seeMoreCount { display: block; }
+.triggerJewelFlyout .metadata { padding-top: 3px; }
+.triggerJewelFlyout li.jewelItemNew { background: #eff1f7; }
+.triggerJewelFlyout ul { padding: 4px 0; }
+
+.fb_content { padding-bottom: 20px; }
+.hasLeftCol #contentArea { padding: 0 20px; width: 759px; }
+.hasLeftCol #contentArea,.hasRightCol #contentArea { float: left; margin-right: 0; }
+.hasLeftCol #contentCol { border-left: 1px solid #b3b3b3; margin-left: 181px; }
+.hasLeftCol #contentCurve { border: 1px solid #b3b3b3; border-top: none; position: relative; }
+.hasLeftCol #headerArea { float: left; margin: 0 20px 0; width: 759px; }
+.hasLeftCol #leftCol { display: block; }
+.hasLeftCol #mainContainer { border-right: 1px solid #b3b3b3; }
+.hasLeftCol #pageFooter { background-color: #fff; clear: both; margin-left: 180px; }
+.hasLeftCol #rightCol { padding-right: 20px; }
+.hasLeftCol .hasRightCol #contentArea { padding-right: 0; width: 493px; }
+.hasRightCol #contentArea { width: 714px; }
+.hasRightCol #rightCol { margin-top: 0; }
+
+.welcomeBox .welcomeBoxBlock { margin-right: 8px; }
+.welcomeBox .welcomeBoxProfileLink { display: block; padding-top: 1px; }
+.welcomeBoxName { display: block; font-weight: bold; padding: 4px 0 2px; width: 112px; word-wrap: break-word; }
+
+.UIImageBlock_Image { float: left; margin-right: 5px; }
+.UIImageBlock_Image .img,img.UIImageBlock_Image,i.UIImageBlock_Image { display: block; }
+.UIImageBlock_MED_Image,.UIImageBlock_ENT_Image { margin-right: 10px; }
+.UIImageBlock_SMALL_Image { margin-right: 8px; }
+.UIImageBlock_Content { display: table-cell; vertical-align: top; width: 10000px; }
+.UIImageBlock_Entity .UIImageBlock_Content { height: 50px; vertical-align: middle; }
+.UIImageBlock_Entity .UIImageBlock_Ext { margin-top: 14px; padding-left: 8px; }
+.UIImageBlock_Entity img.UIImageBlock_Image,.UIImageBlock_Entity i.UIImageBlock_Image,.UIImageBlock_Entity .UIImageBlock_Image .img { height: 50px; width: 50px; }
+
+.uiHeader h2 { color: #1c2a47; font-size: 16px; }
+.uiHeader h2 .uiHeaderImage { top: 2px; }
+
+.uiHeader h2 a { color: #1c2a47; }
+.uiHeader h3,.uiHeader h4 { color: #333; font-size: 12px; }
+.uiHeader h5 { color: #666; font-size: 11px; }
+.uiHeaderBottomBorder { border-bottom: 1px solid #aaa; padding-bottom: .5em; }
+.uiToggleFlyout,.toggleTargetClosed,.openToggler .uiToggleFlyout .uiToggleFlyout { display: none; }
+
+.uiFutureSideNav .actionLinks { font-size: 9px; font-weight: bold; text-transform: uppercase; }
+.uiFutureSideNavSection .buttonWrap { clear: left; float: left; height: 20px; text-align: right; width: 20px; }
+.uiFutureSideNavSection .drag { margin-left: 0; }
+.uiFutureSideNavSection .item,.uiFutureSideNavSection .subitem { margin-left: 20px; margin-right: -20px; }
+.uiFutureSideNavSection .loading .noCount { max-width: 127px; }
+.uiFutureSideNavSection .loading .uiLoadingIndicatorAsync,.uiFutureSideNav .loading .uiLoadingIndicatorAsync { display: inline; }
+.uiFutureSideNavSection .sideNavItem { margin-left: -20px; margin-top:5px; padding-right: 20px; width: 100%; }
+.uiFutureSideNavSection .sideNavItem .hasCount { max-width: 110px; }
+.uiFutureSideNavSection .sideNavItem .imgWrap { float: left; margin-left: -22px; margin-top: -3px; }
+.uiFutureSideNavSection .sideNavItem .linkWrap { display: block; overflow: hidden; padding-left: 0; text-overflow: ellipsis; white-space: nowrap; }
+.uiFutureSideNavSection .sideNavItem .noCount { max-width: 145px; }
+.uiFutureSideNavSection .sideNavItem .uiCloseButton { opacity: 0; }
+.uiFutureSideNavSection .sideNavItem .uiCloseButton:focus,.uiFutureSideNavSection .sideNavItem:hover .uiCloseButton,.uiFutureSideNavSection .sideNavItem .openToggler .uiCloseButton { opacity: 1; }
+.uiFutureSideNavSection .sideNavItem .uiSideNavEditButton { margin: 2px 5px 0 0; text-align: left; }
+.uiFutureSideNavSection .uiLoadingIndicatorAsync { position: relative; top: 2px; }
+.uiFutureSideNavSection .uiSideNavCount { padding-bottom: 2px; }
+
+.uiLoadingIndicatorAsync { display: none; }
+.uiSideNav .async_saving .uiSideNavCount,.uiSideNav .loading .uiSideNavCount { display: none; }
+.uiSideNav .external { background: url(/acadmicRes/assets/graphic/rightGray.png) no-repeat right 3px; padding-right: 12px; }
+.uiSideNav .forceSubitems ul { display: block; }
+.uiSideNav .hidden { display: none; }
+.uiSideNav .hiddenSubitem,.uiSideNav .showSubitems .navMore,.uiSideNav .navMore { display: none; }
+.uiSideNav .item .imgWrap { width: 18px; }
+.uiSideNav .item .linkWrap { display: block; max-width: 116px; overflow: hidden; padding-left: 0; text-overflow: ellipsis; white-space: nowrap; }
+.uiSideNav .item,.uiSideNav .subitem { border-bottom: 1px solid #fff; color: #333; display: block; line-height: 15px; min-height: 17px; padding: 3px 8px 2px 28px; text-decoration: none; }
+.uiSideNav .item:hover .buttonWrap .uiCloseButton { visibility: visible; }
+.uiSideNav .item:hover,.uiSideNav .item:active,.uiSideNav .item:focus,.uiSideNav .subitem:hover,.uiSideNav .subitem:active,.uiSideNav .subitem:focus { background-color: #eff2f7; text-decoration: none; }
+.uiSideNav .loading .item,.uiSideNav .sideNavItem .loading .subitem { background-color: #eff2f7; border-bottom-color: #fff; border-color: #eff2f7; }
+.uiSideNav .loading .navMore { background-color: transparent; }
+.uiSideNav .loading .subitem { background-color: #fff; border-color: #fff; }
+.uiSideNav .loadingIndicator,.actionLinks .loadingIndicator { background: url(/acadmicRes/assets/graphic/loading.gif) no-repeat 0 0; display: none; height: 11px; position: absolute; right: 5px; top: 5px; width: 16px; }
+.uiSideNav .mover { display: none; left: -18px; overflow: hidden; position: absolute; text-align: right; top: 3px; z-index: 2; }
+.uiSideNav .mover .arrow { position: relative; top: -20px; }
+.uiSideNav .mover .arrow:active,.uiSideNav .mover .arrow:focus { top: 0; }
+.uiSideNav .open ul { display: block; }
+.uiSideNav .placeholder { border: 2px dashed gray; }
+.uiSideNav .selectedItem .item,.uiSideNav .selectedItem .item:hover,.uiSideNav ul .selectedItem .subitem,.uiSideNav ul .selectedItem .subitem:hover { background-color: #d8dfea; font-weight: bold; }
+.uiSideNav .showSubitems .hiddenSubitem,.uiSideNav .open .navMore { display: block; }
+.uiSideNav .subitem { padding-left: 37px; }
+.uiSideNav li .navMore { margin: 4px 0 10px 37px; }
+.uiSideNav ul { display: none; }
+.uiSideNav ul .loading .loadingIndicator { top: 5px; }
+.uiSideNavCount { background-color: #d8dfea; color: #3b5998; font-weight: bold; left: -1px; padding: 0 4px; position: relative; webkit-border-radius: 2px; }
+.uiSideNavCountInline { display: inline-block; line-height: 15px; }
+.uiSideNavCountText { color: #808080; }
+
+
+.uiButton,.uiButtonSuppressed:active,.uiButtonSuppressed:focus,.uiButtonSuppressed:hover{background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -249px;background-color:#eee;border:1px solid #999;border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1);cursor:pointer;display:inline-block;font-size: 11px;font-weight:bold;line-height:13px;padding:2px 6px;text-align:center;text-decoration:none;vertical-align:top;white-space:nowrap;}
+.uiButtonLarge{line-height:16px;}
+.uiButton + .uiButton{margin-left:4px;}
+.uiButton:hover{text-decoration:none;}
+.uiButton:active,.uiButtonDepressed{background:#ddd;border-bottom-color:#999;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .05);}
+.uiButton .img{margin-top:2px;vertical-align:top;}
+.uiButtonLarge .img{margin-top:4px;}
+.uiButton .customimg{margin-top:0;}
+.uiButton .uiButtonText,.uiButton input{background:none;border:0;color:#333;cursor:pointer;display:inline-block;font-family:'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;font-size: 12px;font-weight:bold;margin:0;outline:none;line-height:15px; white-space:nowrap;}
+.uiButtonOverlay,.uiButtonOverlay:hover{-webkit-background-clip:padding-box;background-color:#fff;background-color:rgba(255, 255, 255, .8);background-image:none;border-color:#a5a5a5;border-color:rgba(0, 0, 0, .35);-webkit-border-radius:2px;}
+.uiButtonOverlay:focus,.uiButtonOverlay:active{background-color:#f9fafc;background-color:rgba(249, 250, 252, .9);border-color:#3b5998;border-color:rgba(59, 89, 152, .5);}
+.async_saving .uiButton.uiButtonOverlay,.uiButtonOverlay.uiButtonDisabled,.uiButtonOverlay.uiButtonDisabled:active,.uiButtonOverlay.uiButtonDisabled:focus,.uiButtonOverlay.uiButtonDisabled:hover{background-color:#fff;background-color:rgba(255, 255, 255, .8);border-color:#c8c8c8;border-color:rgba(180, 180, 180, .8);}
+.uiButtonSpecial{background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -200px;background-color:#69a74e;border-color:#3b6e22 #3b6e22 #2c5115;}
+.uiButtonSpecial:active{background:#609946;border-bottom-color:#3b6e22;}
+.async_saving .uiButton.uiButtonSpecial,.uiButtonSpecial.uiButtonDisabled,.uiButtonSpecial.uiButtonDisabled:active,.uiButtonSpecial.uiButtonDisabled:focus,.uiButtonSpecial.uiButtonDisabled:hover{background:#b4d3a7;border-color:#9db791;}
+.uiButtonConfirm{background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -298px;background-color:#5b74a8;border-color:#29447e #29447e #1a356e;}
+.uiButtonConfirm:active{background:#4f6aa3;border-bottom-color:#29447e;}
+.async_saving .uiButton.uiButtonConfirm,.uiButtonConfirm.uiButtonDisabled,.uiButtonConfirm.uiButtonDisabled:active,.uiButtonConfirm.uiButtonDisabled:focus,.uiButtonConfirm.uiButtonDisabled:hover{background:#adbad4;border-color:#94a2bf;}
+.async_saving .uiButton.uiButtonSpecial .uiButtonText,.async_saving .uiButton.uiButtonSpecial input,.async_saving .uiButton.uiButtonConfirm .uiButtonText,.async_saving .uiButton.uiButtonConfirm input,.uiButtonSpecial .uiButtonText,.uiButtonSpecial input,.uiButtonSpecial.uiButtonDisabled .uiButtonText,.uiButtonSpecial.uiButtonDisabled input,.uiButtonConfirm .uiButtonText,.uiButtonConfirm input,.uiButtonConfirm.uiButtonDisabled .uiButtonText,.uiButtonConfirm.uiButtonDisabled input{color:#fff;}
+.async_saving .uiButton,.uiButtonDisabled,.uiButtonDisabled:active,.uiButtonDisabled:focus,.uiButtonDisabled:hover{background:#f2f2f2;border-color:#c8c8c8;-webkit-box-shadow:none;}
+.async_saving .uiButton .img,.uiButtonDisabled .img{opacity:.5;}
+.async_saving .uiButton .uiButtonText,.async_saving .uiButton input,.uiButtonDisabled .uiButtonText,.uiButtonDisabled input{color:#b8b8b8;}
+.async_saving .uiButton,.async_saving .uiButton .uiButtonText,.async_saving .uiButton input,.uiButtonDepressed,.uiButtonDepressed .uiButtonText,.uiButtonDepressed input,.uiButtonDisabled,.uiButtonDisabled .uiButtonText,.uiButtonDisabled input{cursor:default;}
+.uiButtonLarge,.uiButtonLarge .uiButtonText,.uiButtonLarge input{font-size: 13px;}
+.uiButtonSuppressed{background:none;border-color:transparent;-webkit-box-shadow:none;}
+.uiButtonNoText .img{margin-left:-1px;margin-right:-1px;}
+.android .uiButton .uiButtonText,.android .uiButton input{padding:3px 0 1px 1px;}
+.uiCloseButton{cursor:pointer;display:inline-block;margin:0;padding:0;zoom:1;}
+label.uiCloseButton{overflow:hidden;}
+
+.uiCloseButton{background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;height:15px;width:15px; background-position:-100px -110px;}
+.uiCloseButton:hover,.uiCloseButton:focus{background-position:-100px -142px;}
+.uiCloseButton:active{background-position:-100px -158px;}
+.uiCloseButton input{cursor:pointer;opacity:0;outline:none;padding:18px;}
+
+.uiCloseButtonSmall{background-image:url('/acadmicRes/assets/graphic/blueStyle.png');height:11px;margin-top:1px;width:11px; background-position:-118px -110px;}
+.uiCloseButtonSmall:hover,.uiCloseButtonSmall:focus{background-position:-118px -134px}
+.uiCloseButtonSmall:active{background-position:-118px -146px}
+
+
+.uiLinkButton input{background:none;border:none;color:#3b5998;cursor:pointer;font-family:'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;font-size: 11px;margin:0;padding:0;vertical-align:top}
+.uiLinkButton:hover,.uiLinkButton input:hover,.uiLinkButton input:focus,.uiLinkButton input:active{color:#3b5998;text-decoration:underline}
+.uiLinkButtonSubtle input,.uiLinkButtonSubtle:hover,.uiLinkButtonSubtle input:hover,.uiLinkButtonSubtle input:focus,.uiLinkButtonSubtle input:active{color:#808080}
+.uiLinkButton input.async_saving{text-decoration:none}
+
+
+.navHeader .bookmarksNavSeeAll { color: #6d84b4; white-space: nowrap; }
+.navHeader .uiLoadingIndicatorAsync { margin-top: -3px; }
+.navHeader,.navHeader a { color: #999; font-size: 12px; font-weight: bold; margin-top: 12px; }
+.droppableNav .actionLinks { display: block; }
+.droppableNav .grip { display:block; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-position: -122px -54px; background-repeat: no-repeat; /*display: none;*/ height: 10px; margin-top: 2px; width: 10px; }
+.droppableNav .rearrange { display: inline; }
+.droppableNav .uiClownySideNavSection .grip { float: right; position: relative; }
+.sideNavItem:hover .bookmarksMenuButton .uiCloseButton,.sideNavItem .bookmarksMenuButton a.selected { visibility: visible; }
+
+.mal { margin: 20px; }
+.mam { margin: 10px; }
+.mas { margin: 5px; }
+.mbl { margin-bottom: 20px; }
+.mbm { margin-bottom: 10px; }
+.mbs { margin-bottom: 5px; }
+.mhl { margin-left: 20px; margin-right: 20px; }
+.mhm { margin-left: 10px; margin-right: 10px; }
+.mhs { margin-left: 5px; margin-right: 5px; }
+.mll { margin-left: 20px; }
+.mlm { margin-left: 10px; }
+.mls { margin-left: 5px; }
+.mrl { margin-right: 20px; }
+.mrm { margin-right: 10px; }
+.mrs { margin-right: 5px; }
+.mtl { margin-top: 20px; }
+.mtm { margin-top: 10px; }
+.mts { margin-top: 5px; }
+.mvl { margin-bottom: 20px; margin-top: 20px; }
+.mvm { margin-bottom: 10px; margin-top: 10px; }
+.mvs { margin-bottom: 5px; margin-top: 5px; }
+
+.pls { padding-left: 5px; }
+.prs { padding-right: 5px; }
+.ptl { padding-top: 20px; }
+.ptm { padding-top: 10px; }
+.pts { padding-top: 5px; }
+.pbl { padding-bottom: 20px; }
+.pvl { padding-bottom: 20px; padding-top: 20px; }
+.pvm { padding-bottom: 10px; padding-top: 10px; }
+.pvs { padding-bottom: 5px; padding-top: 5px; }
+
+.fsl { font-size: 13px; }
+.fsm { font-size: 12px; }
+.fss { font-size: 9px; }
+.fsxl { font-size: 16px; }
+.fsxxl { font-size: 18px; }
+.fwb { font-weight: bold; }
+.fwn { font-weight: normal; }
+.fcb { color: #333; }
+.fcg { color: #808080; }
+
+.exception { font-family:"Verdana"; font-size:10px; padding:10px; }
+.exception h3 { line-height:400%;}
+.exception table td { padding:5px; line-height:150%; }
+
+.UIElement { display:block; padding: 5px 0 15px 0; color:#808080; }
+.UIElement .UI2ColumnLeftSidebar { }
+.UIElement .UI2ColumnLeftSidebar .leftBlock { float:left; }
+.UIElement .UI2ColumnLeftSidebar .contentBlock { /*float:left;*/ }
+
+.UIElement .UISmallUserCard { width:33%; border:1px solid #fcfcfc; display:block; float:left; }
+.UIElement .UISmallUserCard .cardContent { margin:5px;}
+.UIElement .UISmallUserCard .cardContent .img{ display:block; float:left; margin-bottom:10px; }
+.UIElement .UISmallUserCard .cardContent h3 { font-size:12px; font-weight:normal; line-height:20px; padding-bottom:5px; }
+.UIElement .UISmallUserCard .cardContent h3 .uid{ font-size:9px; font-family: "Verdana"; letter-spacing:-1px; }
+.UIElement .UISmallUserCard .cardContent .cardDetail { padding-left:60px; }
+.UIElement .UISmallUserCard .cardContent .kill { /*display:inline-block; width:16px; height:16px;*/ margin-left:10px; line-height:16px; padding:0 8px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat;  background-position: -16px -126px; }
+.UIElement .UISmallUserCard .cardContent .kill:hover { background-position: -16px -110px; }
+
+.UIElement .UISmallUserCard .cardContent.disabled h3, .UIElement .UISmallUserCard .cardContent.disabled a { color:#CCC; }
+.UIElement .UISmallUserCard .cardContent.disabled .cardDetail { color:#CCC; }
+.UIElement .UISmallUserCard .cardContent.disabled .img { filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:alpha(opacity=30);opacity:0.3;}
+
+
+.UIElement UL.groupUser li { padding:10px 0 20px 0; }
+.UIElement UL.groupUser h2 { border-bottom:1px solid #efefef; font-size:12px; margin-bottom:20px; padding-bottom:5px; }
+
+.UIElement UL.openCourse li { padding:10px 0 20px 0; }
+.UIElement UL.openCourse hr { border-bottom: 1px solid #efefef; clear:both; height:10px; margin-bottom:10px; }
+
+.UIElement UL.openCourse .leftBlock { width:100px; }
+.UIElement UL.openCourse .contentBlock {  }
+.UIElement UL.openCourse .contentBlock .imgWrap { display:block; float:left; }
+.UIElement UL.openCourse .contentBlock .imgWrapDesc { margin-left:110px; padding-top:10px; }
+
+.UIElement UL.openCourse .noticeBlock {  }
+.UIElement UL.openCourse .noticeBlock p { line-height:16px; padding:3px 0;}
+.UIElement UL.openCourse .noticeBlock ol { padding:0; margin:0; padding-left:30px; padding-top:25px; }
+.UIElement UL.openCourse .noticeBlock li { padding:0; margin:5px 0; line-height:16px; list-style:circle; color:#AAA; }
+.UIElement UL.openCourse .noticeBlock li a { line-height:16px; }
+.UIElement UL.openCourse .noticeBlock li.friendly { list-style:none; }
+
+.UIElement UL.openCourse .imgWrap { display:block; margin-top:3px; }
+.UIElement UL.openCourse .imgWrap img { padding:3px; border:1px solid #cecfce;}
+
+.UIElement UL.openCourse .name { font-size:14px; line-height:1.6; }
+.UIElement UL.openCourse .resource { font-size:11px; line-height:3; }
+.UIElement UL.openCourse .inrto { line-height:1.5; }
+
+.UIElement UL.senateFirstPage .noticeBlock { margin:20px 5px 10px 5px; }
+.UIElement UL.senateFirstPage .noticeBlock h2 { font-weight:normal; line-height:30px; font-size:15px; color:#000000; }
+.UIElement UL.senateFirstPage .noticeBlock h3 { font-weight:normal; line-height:30px; }
+.UIElement UL.senateFirstPage .noticeBlock small { font-size:10px; font-family:"Verdana"; color:#333; line-height:30px; }
+.UIElement UL.senateFirstPage .noticeBlock p { line-height:16px; padding:3px 0; font-family:"Arial", "SimSun";}
+.UIElement UL.senateFirstPage .noticeBlock p em { line-height:16px; font-size:11px; font-family:"Verdana"; font-style:normal; padding:0 3px; color:#990000; }
+.UIElement UL.senateFirstPage .noticeBlock p b { line-height:12px; font-size:11px; font-family:"Verdana"; font-weight:normal; background-color:#06F; padding:0 3px; color:#FFF; }
+.UIElement UL.senateFirstPage .noticeBlock .operation { float:right; text-align:right;}
+.UIElement UL.senateFirstPage .noticeBlock .operation .uiButtonText { font-weight:normal; line-height:17px; }
+.UIElement UL.senateFirstPage .noticeBlock ol { padding:0; margin:0; padding-left:30px; padding-top:25px; }
+.UIElement UL.senateFirstPage .noticeBlock li { padding:0; margin:5px 0; line-height:16px; list-style:circle; color:#999; }
+.UIElement UL.senateFirstPage .noticeBlock li strong { font-weight:normal; color:#990000; }
+.UIElement UL.senateFirstPage .noticeBlock li a { line-height:16px; }
+.UIElement UL.senateFirstPage .noticeBlock li.friendly { list-style:none; }
+.UIElement UL.senateFirstPage .noticeBlock hr { margin-top:5px; font-size:1px; height:1px; border-bottom:1px solid #f0f0fc; }
+.UIElement UL.senateFirstPage .noticeBlock table { width:auto; border-collapse:collapse; margin:5px 0; }
+.UIElement UL.senateFirstPage .noticeBlock table td { border:1px solid #666; padding:3px 4px;}
+.UIElement UL.senateFirstPage .noticeBlock table td.numeric { font-family:"Verdana"; font-size:9px;}
+
+.UIElement UL.senateFirstPage .systemNotice {  margin:20px 0 10px 0; padding:10px; background-color: #fffbe4; border:1px solid #f8f6e6; } 
+.UIElement UL.senateFirstPage .systemNotice h3 { font-weight:normal; line-height:30px; }
+.UIElement UL.senateFirstPage .systemNotice p { margin-left:22px; line-height:180%; padding:3px 0;}
+.UIElement UL.senateFirstPage .systemNotice p.mln { margin-left:0; }
+.UIElement UL.senateFirstPage .systemNotice p em { line-height:16px; font-size:10px; font-family:"Verdana"; font-style:normal; padding:0 2px; color:#06F; }
+.UIElement UL.senateFirstPage .systemNotice p a { color:#000; }
+
+.UIElement UL.senateFirstPage .systemNotice ol { padding:0; margin:0; padding-left:30px; padding-top:15px; }
+.UIElement UL.senateFirstPage .systemNotice li { padding:0; margin:5px 0; line-height:16px; list-style:circle; }
+.UIElement UL.senateFirstPage .systemNotice li.showTime { line-height:50px; vertical-align:baseline; }
+.UIElement UL.senateFirstPage .systemNotice li.showTime strong { font-size:16px; font-weight:normal; color:#000000; vertical-align:baseline; }
+.UIElement UL.senateFirstPage .systemNotice li.showTime em { padding:0 5px; font-family:"Verdana"; letter-spacing:-3px; font-style:normal; font-size:36px; font-weight:normal; color:#900; vertical-align:baseline;}
+.UIElement UL.senateFirstPage .systemNotice li.showTime i { padding:0 3px; font-family:"Verdana"; letter-spacing:-1px; font-style:normal; font-size:18px; font-weight:normal; color:#900; vertical-align:baseline;}
+
+.UIElement .UIinlineEdit { height:20px; margin-top:-20px; margin-right:5px; }
+.UIElement .UIinlineEdit a { display:block; float:right; overflow:hidden; text-indent:16px; width:16px; height:16px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; }
+.UIElement .UIinlineEdit a.editTrigger { width:8px; background-position: -88px -32px; }
+
+.UIElement .UIframeBox { width:100%; height:400px; margin:10px 0; }
+
+.UIElement .UItab { margin-bottom:5px; margin-top:15px; }
+.UIElement .UItab .tabLables { border-bottom:1px solid #b3b3b3; border-left:1px solid #b3b3b3; height:28px; } 
+.UIElement .UItab .tabLables span { cursor:pointer; display:block; float:left; height:28px; line-height:28px; padding:0 8px; border-top:1px solid #b3b3b3; border-right:1px solid #b3b3b3; } 
+.UIElement .UItab .tabLables span.active { background-color: #3b5998; color:#FFFFFF; border-color:#1d4088; }
+.UIElement .tabContent { display:none;}
+
+.UIElement .UItab2 { margin-top:20px; }
+.UIElement .UItab2 .tabLables { border-bottom:1px solid #555; border-left:1px solid #555; height:28px; } 
+.UIElement .UItab2 .tabLables a, .UIElement .UItab2 .tabLables span { text-decoration:none; cursor:pointer; display:block; float:left; height:28px; line-height:28px; padding:0 8px; color:#333; border-top:1px solid #555; border-right:1px solid #555;} 
+.UIElement .UItab2 .tabLables a.active, .UIElement .UItab2 .tabLables span.active { background-color: #555; color:#FFFFFF; border-color:#555; }
+.UIElement .tabContentBox { padding-top:15px; }
+
+.UIElement .UINavBoard { padding:5px; }
+.UIElement .UINavBoard .col3 { display:block; width:32%; float:left; margin:0 2%; }
+.UIElement .UINavBoard .col3.first { margin:0; }
+.UIElement .UINavBoard .col3.last { margin:0; float:right; }
+.UIElement .UINavBoard .board { border:1px solid #f8f8f8; padding:10px 5px; margin-bottom:10px; border-radius: 5px; min-height:60px; }
+.UIElement .UINavBoard .board a { text-decoration:none; }
+.UIElement .UINavBoard .board .content h5 { font-weight:normal; font-size:14px; color:#555; margin-bottom:5px; }
+.UIElement .UINavBoard .board .content p { color:#999; line-height:18px; }
+.UIElement .UINavBoard .board .pic { float:left; width:60px; display:none; }
+
+.UIElement .UINavBoard .board:hover { border:1px solid #f0f0f0; background-color:#fdfdfd; }
+.UIElement .UINavBoard .board:hover .content h5 { color:#000; }
+.UIElement .UINavBoard .board:hover .content p { color:#333; }
+
+.UIElement .UINavBoard .hasPic .content { margin-left:65px; margin-top:3px; }
+.UIElement .UINavBoard .hasPic .pic { display:block; }
+
+.UIElement .UIFormula { padding:5px; }
+.UIElement .UIFormula .col2 { display:block; width:49%; float:left; }
+.UIElement .UIFormula .col2.last { float:right; }
+.UIElement .UIFormula .board { border:1px solid #f2f2f2; padding:10px 5px; margin-bottom:15px; border-radius: 5px; min-height:180px; }
+.UIElement .UIFormula .board:hover { border:1px solid #b2b2b2; border-radius: 5px; }
+.UIElement .UIFormula a { text-decoration:none; }
+.UIElement .UIFormula .LaTex { padding-bottom:10px; margin-bottom:20px; border-bottom:1px solid #fcfcfc; min-height: 60px; }
+.UIElement .UIFormula .argsList { color:#999; padding-bottom:5px; }
+.UIElement .UIFormula .argsList span { padding-right:5px; }
+.UIElement .UIFormula .argsList span img { vertical-align:bottom; }
+
+
+.UIElement .UIDashBoard { padding:5px; }
+.UIElement .UIDashBoard .col2 { display:block; width:49%; float:left; }
+.UIElement .UIDashBoard .col2.last { float:right; }
+.UIElement .UIDashBoard .board { border:1px solid #f2f2f2; padding:10px 5px; margin-bottom:15px; border-radius: 5px; min-height:120px; }
+.UIElement .UIDashBoard .board:hover { border:1px solid #b2b2b2; border-radius: 5px; }
+.UIElement .UIDashBoard .board a { text-decoration:none; }
+.UIElement .UIDashBoard .board .content h3 { font-family:"Arial"; font-weight:normal; font-size:40px; color:#900; margin-bottom:20px; }
+.UIElement .UIDashBoard .board .content h3 .unitPriod { margin-left:5px; font-family:"Arial","SimSun"; font-size:12px; color:#999; vertical-align:top; }
+.UIElement .UIDashBoard .board .content h3.pass { color:#0C0; }
+.UIElement .UIDashBoard .board .content h3.pass .unitALL { margin-left:15px; font-family:"Arial","SimSun"; font-size:20px; color:#039; vertical-align:top }
+.UIElement .UIDashBoard .board .content h5 { font-weight:normal; font-size:16px; color:#000; margin-bottom:5px; }
+
+.UIElement .UIDashBoard .board .content .describ { color:#555; line-height:20px; }
+.UIElement .UIDashBoard .board .content .describ .smallNum { font-family:"Verdana"; font-size:11px; margin:0 5px; line-height:20px; color:#36C; }
+
+.UIElement .UIDashBoard .board .content .desc { color:#aaa; line-height:20px; margin-top:15px; }
+
+
+.UIElement .UIDashBoard .board .pic { float:left; width:105px; display:none; }
+.UIElement .UIDashBoard .hasPic .content { margin-left:110px; }
+.UIElement .UIDashBoard .hasPic .pic { display:block; }
+
+.UIElement .UICardTable {}
+.UIElement .UICardTable dl { height:60px; width:33%; border:1px solid #fcfcfc; display:block; float:left; }
+.UIElement .UICardTable dl.col2 { width:49%; }
+.UIElement .UICardTable dl.clickAble { cursor:pointer; }
+.UIElement .UICardTable dl:hover { background-color:#F8F8F8;}
+.UIElement .UICardTable dl dt { display:block; margin:10px 5px; }
+.UIElement .UICardTable dl a { text-decoration:none; color:#666666; }
+.UIElement .UICardTable dl i { display:block; float:left; margin-top:1px; margin-right:10px; margin-bottom:10px; width:25px; height:25px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -215px -110px; }
+.UIElement .UICardTable dl i.sex1 { background-position: -215px -135px; }
+.UIElement .UICardTable dl i.sex2 { background-position: -215px -110px; }
+
+.UIElement .UICardTable dl b { display:block; float:left; margin-top:1px; margin-right:10px; margin-bottom:10px; width:32px; height:32px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -332px -110px; }
+.UIElement .UICardTable dl b.school { background-position: -300px -110px; }
+.UIElement .UICardTable dl b.depart { background-position: -300px -142px; }
+.UIElement .UICardTable dl b.office { background-position: -364px -110px; }
+.UIElement .UICardTable dl b.church { background-position: -332px -142px; }
+
+.UIElement .UICardTable dl em { display:block; float:left; margin-top:3px; margin-right:10px; margin-bottom:10px; width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -118px -68px; }
+.UIElement .UICardTable dl em.collection { background-position: -336px -86px; }
+.UIElement .UICardTable dl em.people { background-position: -336px -50px; }
+.UIElement .UICardTable dl em.course { background-position: -336px -32px; }
+.UIElement .UICardTable dl em.program { background-position: -336px -68px; }
+.UIElement .UICardTable dl em.subject { background-position: -354px -32px; }
+.UIElement .UICardTable dl em.direct { background-position: -354px -50px; }
+.UIElement .UICardTable dl em.campus { background-position: -172px -50px; }
+.UIElement .UICardTable dl em.building { background-position: -172px -68px; }
+.UIElement .UICardTable dl em.questionnaire { background-position: -444px -50px; }
+.UIElement .UICardTable dl dd { display:block; }
+.UIElement .UICardTable dl dd.mpls { margin-left:28px; padding-left:10px; }
+.UIElement .UICardTable dl dd h3 { font-size:12px; font-weight:normal; line-height:20px; margin-bottom:5px; }
+.UIElement .UICardTable dl dd h3.fixed { height:20px; overflow:hidden; }
+.UIElement .UICardTable dl dd p { font-size:10px; letter-spacing:-1px; font-family:"Verdana"; color:#333; }
+.UIElement .UICardTable dl dd div { font-size:12px; font-family:"SimSun"; color:#aaa; }
+.UIElement .UICardTable dl dd span { font-size:11px; font-family:"Verdana"; color:#555; padding:0 3px; }
+
+.UIElement .UICardTable dl.col2 { width:49%; }
+
+.UIElement .UICardTable dl.warn dd h3 { color:#900; }
+.UIElement .UICardTable dl.warn dd p { color:#900; }
+.UIElement .UICardTable dl.warn dd div { color:#900; }
+
+.UIElement .UICardTable dl.disabled dd h3 { color:#CCC; }
+.UIElement .UICardTable dl.disabled dd p, .UIElement .UICardTable dl.disabled dd div { color:#CCC; }
+.UIElement .UICardTable dl.disabled b, .UIElement .UICardTable dl.disabled em { filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:alpha(opacity=30);opacity:0.3;}
+
+.UIElement .UItable { color:#666; width:99%; margin:0 auto; border-collapse:collapse; font-family:"Verdana", "SimSun"; }
+.UIElement .UItable td { height:35px; }
+.UIElement .UItable tr.cellCenter td { text-align:center; }
+.UIElement .UItable tr.cellBorder td { border:1px solid #999; padding:0 5px;  }
+.UIElement .UItable tr.cellDivide td { border:1px solid #eee; padding:5px 2px; }
+.UIElement .UItable tr.cellDot td { border:1px solid #FEFEFE; padding:0 5px; height:45px; font-size:14px; }
+.UIElement .UItable tr.cellLeader td { background-color:#FEFEFE; color:#000; font-size:15px; }
+.UIElement .UItable tr.cellHeader td { background-color:#EEE; color:#000; font-size:14px; }
+
+.UIElement .UItable tr.cellNotice td { background-color:#FCFCFC; color:#000; }
+.UIElement .UItable tr.alertRow td { color:#900 !important; }
+.UIElement .UItable tr.alertRow span { color:#900 !important; }
+.UIElement .UItable td.cellBorder { border:1px solid #999; padding:0px; margin:0; }
+.UIElement .UItable td.cellBorder table.UIEditable { width:100%; margin-bottom: 0px;}
+.UIElement .UItable td.cellBorder table.UIEditable thead tr { border-bottom:1px dotted #999; }
+.UIElement .UItable td.cellBorder table.UIEditable span.notice { color:#990000; display:block; font-size:11px; float:left; width:15px; height:15px; }
+.UIElement .UItable td.cellBorderPadding { border:1px solid #999; padding:3px 5px;}
+.UIElement .UItable span.number, .UIElement .UItable span.numeric { font-family:"Verdana"; font-size:10px; color:#333; }
+.UIElement .UItable span.number.bold, .UIElement .UItable span.numeric.bold { color:#000; font-weight:bold; }
+.UIElement .UItable span.alert { color:#900; }
+.UIElement .UItable span.attention { color:#000; }
+
+.UIElement .UItable span.huge { font-size:45px; }
+.UIElement .UItable span.huge.purple { color: #b44bff; }
+.UIElement .UItable span.huge.yellow { color: #ffe430; }
+.UIElement .UItable span.huge.orange { color: #ff813d; }
+.UIElement .UItable span.huge.green { color: #39ce61; }
+.UIElement .UItable span.huge.blue { color: #1999f6; }
+.UIElement .UItable span.huge.deepblue { color: #017cb3; }
+.UIElement .UItable span.huge.red { color: #e1324b; }
+
+
+.UIElement .UItable tr.breakRows { height:2px; }
+.UIElement .UItable tr.breakRows td { padding:0; margin:0; height:2px; line-height:2px; border: 1px solid #999; }
+
+.UIElement .UItable .stat { width:16px; height:16px; display:inline-block; zoom: 1; *display: inline; margin-right:2px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; }
+.UIElement .UItable .stat.on { background-position: -64px -158px;}
+.UIElement .UItable .stat.off { background-position: -64px -174px;}
+.UIElement .UItable .stat.disable { background-position: -33px -174px;}
+
+.UIElement .UItable.withBorder { margin-left:5px; width:99%; font-family:"Arial","SimSun"; }
+.UIElement .UItable.withBorder tr { height:30px; }
+.UIElement .UItable.withBorder td { border:1px solid #F2F2F2; padding:2px 0px 2px 6px; margin:0; line-height:20px; }
+
+.UIElement .UItable.autoWidth { width:auto !important; }
+.UIElement .UItable.autoWidth td.header { text-align:left; color:#FFF; background-color:#000; }
+.UIElement .UItable.autoWidth td { text-align:center; padding: 3px 10px;}
+.UIElement .UItable.autoWidth tbody td:hover { background-color:#069; color:#FFF; }
+.UIElement .UItable.autoWidth tbody td:hover a { color:#FFF; }
+
+.UIElement .UItable.withBorder td.quota,
+.UIElement .UItable tr.cellBorder td.quota,
+
+.UIElement .UItable td.quota { padding:0; margin:0; text-align:center; }
+.UIElement .UItable td.quota table { border-collapse:collapse; width:100%; }
+.UIElement .UItable td.quota table td { text-align:center; word-break:keep-all; border:1px solid #F2F2F2; }
+.UIElement .UItable td.quota table tr.valued td { font-family:"Verdana"; font-size:10px; color:#333; }
+
+.UIElement .UItable td.quota a { display:inline-block; line-height:18px; margin-top:4px; margin-bottom:5px; margin-right:5px; padding:1px 6px; text-decoration:none; color:#aaa; border:1px solid #aaa; border-radius:3px; }
+.UIElement .UItable td.quota a:hover { color:#333; border-color:#333; }
+.UIElement .UItable td.quota a.checked { background:#2f7ed8; color:#fff; border-color:#2f7ed8; }
+
+.UIElement .UItable td.quota span { display:inline-block; line-height:18px; margin-top:4px; margin-bottom:5px; margin-right:5px; padding:1px 6px; text-decoration:none; color:#aaa; border:1px solid #aaa; border-radius:3px; }
+.UIElement .UItable td.quota span.checked { background:#8bbc21; color:#fff; border-color:#8bbc21; }
+
+
+.UIElement .UItable td.quota input.Mark { color:#333; ime-mode:disabled; text-transform:uppercase; width:50px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; border-width: 1px; border-style: solid; border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; }
+.UIElement .UItable td.quota input.Mark:focus { color: #000; border-color: #000; }
+.UIElement .UItable td.quota input.Mark:disabled { color: #CCC; border-color: #eee; }
+
+
+.UIElement .UItable td.quota.ltr { text-align:left !important; padding-left:5px !important; }
+.UIElement .UItable td.quota.ltr a { margin-left:10px; }
+
+
+.UIElement .UItable tr.pass td { background-color:#e2efda; color:#333; }
+.UIElement .UItable tr.failure td { background-color:#fff2cc; color:#333; }
+
+.UIElement .UItable.markPassed { border:1px solid #8ab62a; }
+.UIElement .UItable.markPassed tr.cellHeader td { background-color:#8ab62a; color:#FFF; font-size:14px; border-color: #8ab62a; }
+.UIElement .UItable.markPassed tbody tr:hover { background-color:#f3f8e9; }
+
+.UIElement .UItable.markNeed { border:1px solid #DB5EBC; }
+.UIElement .UItable.markNeed tr.cellHeader td { background-color:#DB5EBC; color:#FFF; font-size:14px; border-color: #DB5EBC; }
+.UIElement .UItable.markNeed tbody tr:hover { background-color:#f7edff; }
+
+.UIElement .UItable.markFailure { border:1px solid #e1324b; }
+.UIElement .UItable.markFailure tr.cellHeader td { background-color:#e1324b; color:#FFF; font-size:14px; border-color: #e1324b; }
+.UIElement .UItable.markFailure tbody tr:hover { background-color:#fceaed; }
+
+.UIElement .UItable.markReplace { border:1px solid #1a963c; }
+.UIElement .UItable.markReplace tr.cellHeader td { background-color:#1a963c; color:#FFF; font-size:14px; border-color: #1a963c; }
+.UIElement .UItable.markReplace tbody tr:hover { background-color:#e4fbeb; }
+
+.UIElement .UItable.markFailureOpt { border:1px solid #c0a912; }
+.UIElement .UItable.markFailureOpt tr.cellHeader td { background-color:#c0a912; color:#FFF; font-size:14px; border-color: #c0a912; }
+.UIElement .UItable.markFailureOpt tbody tr:hover { background-color:#f7f0c5; }
+
+.UIElement .UItable.courseReplace { border:1px solid #b44bff; }
+.UIElement .UItable.courseReplace tr.cellHeader td { background-color:#b44bff; color:#FFF; font-size:14px; border-color: #b44bff; }
+.UIElement .UItable.courseReplace tbody tr:hover { background-color:#f3e6fc; }
+
+.UIElement .UItable .operation { display:block; width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; }
+.UIElement .UItable .operation.linkCourse { background-position: -262px -86px; }
+.UIElement .UItable .operation.replaceCourse { background-position: -280px -86px; }
+.UIElement .UItable .operation.recoverCourse { background-position: -156px -156px; }
+
+.UIArrowHead { background: #eee; margin: 0 2px 20px 2px; }
+.UIArrowHead h2 { background: #ccc; line-height: 3; padding: 0 0 0 10px; font-family:"SimSun"; font-size: 12px; font-weight:normal; box-shadow: inset 0 25px 10px -10px rgba(255, 255, 255, 0.2); }
+.UIArrowHead h2 a { float: right; position: relative; text-decoration: none; color: #333; padding: 0 10px; border-left: 5px solid white; -webkit-transition: padding 0.1s linear; -moz-transition: padding 0.1s linear; -ms-transition: padding 0.1s linear; -o-transition: padding 0.1s linear; }
+.UIArrowHead h2 a:hover { padding: 0 14px; }
+.UIArrowHead h2 a:active { padding: 0 16px; }
+.UIArrowHead ul { list-style: none; padding: 10px 0; }
+.UIArrowHead li { color: #333; border-bottom: 1px solid #cfcfcf; border-top: 1px solid #fbf6f6; padding: 10px; font-family: Georgia, Serif; }
+.UIArrowHead li:first-child { border-top: 0; padding-top: 0; }
+.UIArrowHead li:last-child { border-bottom: 0; padding-bottom: 0; }
+.UIArrowHead h2 a:before, .UIArrowHead h2 a:after { content: ""; position: absolute; top: 50%; width: 0; height: 0; }
+.UIArrowHead h2 a:before { left: -12px; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-right: 8px solid white; margin-top: -8px; }
+
+.UIArrowHead.orange h2 { background: #ff7328; color:#fff; }
+.UIArrowHead.orange h2 a { background: #d76121; color:#fff;  }
+.UIArrowHead.orange h2 a:hover { background: #c0561e; }
+.UIArrowHead.orange h2 a:after { left: -5px; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 6px solid #c0561e; margin-top: -6px; }
+.UIArrowHead.orange h2 a:hover:after { border-right-color: #c0561e; }
+
+.UILeadHead { overflow: hidden; text-align: center; font-family:"Microsoft YaHei", "SimSun"; }
+.UILeadHead:before,
+.UILeadHead:after { background-color: #333; content: ''; display: inline-block; height: 3px; position: relative; vertical-align: middle; width: 50%;}
+.UILeadHead:before { right: 0.5em; margin-left: -50%; }
+.UILeadHead:after { left: 0.5em; margin-right: -50%; }
+
+.UILeadHead.markPassed:before,
+.UILeadHead.markPassed:after { background-color: #8ab62a; }
+.UILeadHead.markNeed:before,
+.UILeadHead.markNeed:after { background-color: #DB5EBC; }
+.UILeadHead.markFailure:before,
+.UILeadHead.markFailure:after { background-color: #e1324b; }
+.UILeadHead.markFailureOpt:before,
+.UILeadHead.markFailureOpt:after { background-color: #c0a912; }
+.UILeadHead.markReplace:before,
+.UILeadHead.markReplace:after { background-color: #1a963c; }
+.UILeadHead.courseReplace:before,
+.UILeadHead.courseReplace:after { background-color: #b44bff; }
+
+.UIElement .UIArrangeOper { display:block; padding:3px; }
+.UIElement .UIArrangeOper.rtl { text-align:right; }
+.UIElement .UIArrangeOper .opTt { display:inline-block; padding:2px 8px 1px 1px; margin:3px 1px; }
+.UIElement .UIArrangeOper .opBtn { display:inline-block; padding:2px 8px 1px 8px; margin:3px 1px; border-radius:3px; line-height:15px; }
+.UIElement .UIArrangeOper .opBtn.numeric { padding:1px 5px 2px 5px; font-size:10px; font-family:"Verdana"; }
+
+.UIElement .UIArrangeOper a.weekBtn { float:left; position: relative; display:block; padding:1px 8px 2px 8px; font-size:10px; font-family:"Verdana"; margin:1px; border-radius:3px; border: 1px solid #F60; color:#F60; text-decoration:none; }
+.UIElement .UIArrangeOper a.weekBtn:hover { font-size:40px; background-color:#F60; color:#FFF; }
+.UIElement .UIArrangeOper span.weekBtn { float:left; position: relative; display:block; padding:1px 8px 2px 8px; font-size:10px; font-family:"Verdana"; margin:1px; border-radius:3px; border: 1px solid #CCC; color:#CCC; text-decoration:none; }
+
+.UIElement .UIArrangeOper .lable { color:#555; width:90px; float:left; padding:3px 0; }
+.UIElement .UIArrangeOper .content { margin-left:90px; }
+
+.UIElement .UIArrangeOper span.opBtn { border: 1px solid #F60; color:#FFF; background-color:#F60; }
+.UIElement .UIArrangeOper a.opBtn { border: 1px solid #F60; color:#F60; text-decoration:none; }
+.UIElement .UIArrangeOper a.opBtn:hover { background-color:#F60; color:#FFF; }
+
+.UIElement .UIArrangeOper a.Spe { border: 1px solid #333; color:#333; text-decoration:none; }
+.UIElement .UIArrangeOper a.Spe:hover { background-color:#333; color:#FFF; }
+
+.UIElement .UIArrangeOper a.Index { padding:2px 3px; margin-left:5px; font-size:10px; font-family:"Verdana"; border: 1px solid #06F; color:#06F; text-decoration:none; }
+.UIElement .UIArrangeOper a.Index:hover { background-color:#06F; color:#FFF; }
+
+.UIElement .UIArrangeOper a.Index.selected { background-color:#06F; border-color:#06F; color:#FFF; }
+
+.UIElement .UIArrangeOper a.Opt { border: 1px solid #F60; color:#F60; text-decoration:none; }
+.UIElement .UIArrangeOper a.Opt:hover { background-color:#F60; color:#FFF; }
+
+.UIElement .UIArrangeOper a.Numb { padding:2px 3px; margin-left:5px; font-size:10px; font-family:"Verdana"; }
+
+.UIElement .UIArrangeOper span.OptOn { border: 1px solid #F60; color:#FFF; background-color:#F60; }
+.UIElement .UIArrangeOper span.Numb { padding:2px 3px; margin-left:5px; font-size:10px; font-family:"Verdana"; }
+
+.UIElement .UIArrangeOper select.filedPeriod { margin-left:5px; line-height:22px; border:1px solid #09F; color:#06F; font-family:"Verdana"; font-size:11px; }
+.UIElement .UIArrangeOper input.filedWeek { margin-left:5px; text-align:center; width:30px; height:19px; line-height:19px; border-bottom:1px solid #09F; color:#06F; font-family:"Verdana"; font-size:11px; }
+.UIElement .UIArrangeOper input.filedExamWeek { margin-left:5px; text-align:center; width:30px; height:19px; line-height:19px; border-bottom:1px solid #09F; color:#06F; font-family:"Verdana"; font-size:11px; }
+.UIElement .UIArrangeOper input.filedPlanSize { margin-left:5px; text-align:center; width:40px; height:19px; line-height:19px; border-bottom:1px solid #09F; color:#06F; font-family:"Verdana"; font-size:11px; }
+.UIElement .UIArrangeOper input.btnSubmit { padding:0 8px; background-color:#09F; color:#FFFFFF; line-height:20px; height:20px;}
+
+.UIElement .UIChooser { display:block; margin:5px 5px 10px 5px; padding-bottom:10px; font-family:"Verdana","SimSun"; color:#666; border-bottom:1px solid #f8f8f8; }
+.UIElement .UIChooser .title { line-height:18px; vertical-align:baseline; }
+
+.UIElement .UIChooser .title .stat,
+.UIElement .UIChooser .title .trigger { width:16px; height:16px; display:inline-block; zoom: 1; *display: inline; margin-right:3px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; }
+.UIElement .UIChooser .title .stat.checked { background-position: 0px -110px; }
+.UIElement .UIChooser .title .stat.locked { background-position: -408px -51px;}
+.UIElement .UIChooser .title .trigger.open { background-position: -426px -32px; }
+.UIElement .UIChooser .title .trigger.close { background-position: -426px -50px; }
+.UIElement .UIChooser .title .trigger.checked { background-position: 0px -110px; }
+.UIElement .UIChooser .title .type { display:inline-block; zoom: 1; *display: inline; padding:0px 5px; border-radius:3px; }
+.UIElement .UIChooser .title .type.t1 { border: 1px solid #06F; color:#06F; }
+.UIElement .UIChooser .title .type.t2 { border: 1px solid #090; color:#090; }
+.UIElement .UIChooser .title .type.tB2 { border: 1px solid #960; color:#960; }
+.UIElement .UIChooser .title .type.tS3 { padding:1px 6px; color:#FFF; background-color:#60C; }
+.UIElement .UIChooser .numeric { font-family:"Verdana"; font-size:10px; color:#900; }
+.UIElement .UIChooser .name { font-weight:bold; color:#333; }
+.UIElement .UIChooser .courseDesc { padding-left:23px; padding-top:10px; line-height:25px; vertical-align:baseline; }
+.UIElement .UIChooser .taskList { padding-left:23px; padding-top:20px; }
+
+.UIColumns { zoom: 1; }
+.UIColumns:after { clear: both; content: "."; display: block; font-size: 0; height: 0; line-height: 0; visibility: hidden; }
+
+.UIColumns .col2 { width:49%; float:left; }
+.UIColumns .col2.first { width:50%; }
+.UIColumns .col2.last { float:right; }
+
+.UIElement .UICourseTable { display:block; width:99%; border-collapse:collapse; margin:20px auto; font-family:"Arial","SimSun"; color:#666; }
+.UIElement .UICourseTable td { padding:5px; text-align:center; }
+.UIElement .UICourseTable thead td { height:20px;  }
+.UIElement .UICourseTable tbody td { min-height:100px; height:100px; border:1px solid #e1e1e1 /*efefef*/; color:#555;  }
+
+.UIElement .UICourseTable tbody td.yes { background-color:#f7fff8; }
+.UIElement .UICourseTable tbody td.no { background-color:#fffafb; }
+
+.UIElement .UICourseTable tbody td a { line-height:20px; color:#333; }
+.UIElement .UICourseTable tbody td a.no { color:#aaa; }
+.UIElement .UICourseTable tbody td a.yes { color:#060; }
+.UIElement .UICourseTable tbody td a.force { color:#900; }
+
+.UIElement .UICourseTable tbody td a.cellCount { font-family:"Verdana"; font-size:24px; text-decoration:none; color:#f60; }
+.UIElement .UICourseTable tbody td a.cellCount:hover { color:#00C; }
+
+.UIElement .UICourseTable tbody td span { color:#ccc;}
+.UIElement .UICourseTable tbody td .lecture { padding:5px 0; }
+.UIElement .UICourseTable tbody td .lecture .course { color:#333;  }
+.UIElement .UICourseTable tbody td .lecture .teacher { color:#555; }
+.UIElement .UICourseTable tbody td .lecture .idx { color:#333; font-size:10px; font-family:Verdana; line-height:20px; padding:0 3px; }
+.UIElement .UICourseTable tbody td .lecture .week { color:#999; font-size:10px; font-family:Verdana; line-height:20px; padding:0 3px; }
+.UIElement .UICourseTable tbody td .lecture .place { color:#888; }
+
+.UIElement .UICourseTable tbody td .cellBreaker { height:1px; border-bottom:1px solid #e1e1e1; margin:0 -4px; }
+
+.UIElement .UICourseTable tbody td.available { background-color: #CDEB8B; }
+.UIElement .UICourseTable tbody td.available a { color: #000; }
+
+.UIElement .UICourseTable tbody td.attention { border: 2px solid #900; background-color:#fffaf6; }
+
+.UIElement .UICourseTable tbody td.conflictL1 { background-color:#FEFEFE;}
+.UIElement .UICourseTable tbody td.conflictL2 { background-color:#fcfdf9;}
+.UIElement .UICourseTable tbody td.conflictL3 { background-color:#fbfcfd;}
+.UIElement .UICourseTable tbody td.conflictL4 { background-color:#f9fdfe;}
+.UIElement .UICourseTable tbody td.conflictL5 { background-color:#fffaf6;}
+
+.UIElement .UICourseTable tbody td.conflictL3 a.cellCount { color:#CCC; }
+.UIElement .UICourseTable tbody td.conflictL4 a.cellCount { color:#DDD; }
+.UIElement .UICourseTable tbody td.conflictL5 a.cellCount { color:#EEE; }
+
+.UIElement .UICourseTable tbody td.conflictL3 a.cellCount:hover,
+.UIElement .UICourseTable tbody td.conflictL4 a.cellCount:hover,
+.UIElement .UICourseTable tbody td.conflictL5 a.cellCount:hover { color:#900; }
+
+
+.UIElement .UICourseTable .numeric { font-size:10px; font-family:Verdana; line-height:20px; padding:0 3px; }
+.UIElement .UICourseTable .number { color:#666; font-size:10px; font-family:Verdana; line-height:20px; padding:0 3px; }
+.UIElement .UICourseTable .notice { color:#CC9; }
+
+.UIElement .UICourseTable .desc { padding-top:5px; color:#AAA;}
+.UIElement .UICourseTable .desc span { color:#333; font-size:9px; font-family:Verdana; line-height:20px; }
+
+.UIElement .UIEditable { width:99%; border-collapse:collapse; margin:0 auto; margin-bottom:30px; font-family:"Arial","SimSun"; color:#555; }
+.UIElement .UIEditable.Mini { margin: 0; }
+.UIElement .UIEditable td { padding:2px 0px 2px 6px; margin:0; line-height:20px; }
+.UIElement .UIEditable tr { height:35px; }
+.UIElement .UIEditable a { color:#096; text-decoration:none; }
+.UIElement .UIEditable a:hover { color:#000; }
+
+.UIElement .UIEditable tr.breakRows { height:3px; }
+.UIElement .UIEditable tr.breakRows td { padding:0; margin:0; line-height:3px; border-bottom: 1px solid #eee; }
+
+.UIElement .UIEditable tr.breakRowsBold { height:1px; }
+.UIElement .UIEditable tr.breakRowsBold td { padding:0; margin:0; line-height:1px; border-bottom: 1px solid #ddd; background-color:#ddd; }
+
+.UIElement .UIEditable tr.breakRowsBlue { height:3px; }
+.UIElement .UIEditable tr.breakRowsBlue td { padding:0; margin:0; line-height:3px; border-bottom: 1px solid #5068a5; background-color:#5068a5; }
+
+.UIElement .UIEditable thead td { border-bottom: 1px solid #eee; }
+
+.UIElement .UIEditable tbody tr:hover { background-color:#F8F8F8; }
+.UIElement .UIEditable tr.targetRow td { background-color:#F2F2F2; }
+.UIElement .UIEditable tr.clickRows td { border-bottom: 1px solid #eee; cursor:pointer; }
+.UIElement .UIEditable tr.editRows td { border-bottom: 1px solid #F2F2F2; }
+.UIElement .UIEditable tr.lastEdited td { border-bottom: 1px solid #900; border-top: 1px solid #900; }
+.UIElement .UIEditable tr.alertRow td { border-bottom: 1px solid #F00; }
+.UIElement .UIEditable tr.alertRow2 td { border-bottom: 1px solid #F00; color:#900 !important;  }
+.UIElement .UIEditable tr.alertRow2 td span { color:#900 !important;  }
+.UIElement .UIEditable tr.cancelRow td { color:#CCC !important; }
+.UIElement .UIEditable tr.cancelRow td span { color:#CCC !important; }
+.UIElement .UIEditable tr.noticeRow1 td { color:#900 !important; }
+.UIElement .UIEditable tr.noticeRow1 td span { color:#900 !important; }
+.UIElement .UIEditable tr.noticeRow2 td { color:#06F !important; }
+.UIElement .UIEditable tr.noticeRow2 td span { color:#06F !important; }
+.UIElement .UIEditable tr.noticeRow3 td { color:#5068a5 !important; }
+.UIElement .UIEditable tr.noticeRow3 td span { color:#5068a5 !important; }
+
+.UIElement .UIEditable tr.studyTypeR td { color:#900 !important; }
+.UIElement .UIEditable tr.studyTypeR td span { color:#900 !important; }
+.UIElement .UIEditable tr.studyTypeF td { color:#06F !important; }
+.UIElement .UIEditable tr.studyTypeF td span { color:#06F !important; }
+
+.UIElement .UIEditable td.TaskProgress0 { color:#900 !important; }
+.UIElement .UIEditable td.TaskProgress1 { color:#06F !important; }
+.UIElement .UIEditable td.TaskProgress2 { color:#360 !important; }
+.UIElement .UIEditable td.TaskProgress3 { color:#060 !important; }
+
+.UIElement .UIEditable tr.studyTypeR td .markNote0 { color:#fff !important; }
+
+.UIElement .UIEditable .markNote0 { color:#fff !important; background-color:#000; padding:0 2px; line-height:15px; }
+.UIElement .UIEditable .markNote1 { color:#000 !important; }
+.UIElement .UIEditable .markNote2 { color:#609 !important; }
+.UIElement .UIEditable .markNote3 { color:#060 !important; }
+.UIElement .UIEditable .markNote9 { color:#900 !important; }
+.UIElement .UIEditable .markNoteY { color:#ccc !important; }
+.UIElement .UIEditable .markNoteN { color:#fff !important; background-color:#F00; padding:2px 3px; }
+
+.UIElement .UIEditable td.stateCP { color:#090; }
+
+.UIElement .UIEditable .index { font-size:10px; font-family:Verdana; color:#000000; }
+.UIElement .UIEditable .english { font-size:11px; font-family:Tahoma; }
+.UIElement .UIEditable .numeric { font-size:10px; font-family:Verdana; color:#444; }
+.UIElement .UIEditable .numeric.bold { color:#000; font-weight:bold; }
+.UIElement .UIEditable .numeric.changed { color:#fff; background-color:#333; padding:1px 3px; }
+.UIElement .UIEditable .active input.activeText { color:#808080; font-size:12px; padding: 5px; width:350px; border-width: 1px; border-style: solid; border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; }
+.UIElement .UIEditable .active input.activeRadio { padding-left:2px; }
+.UIElement .UIEditable .active input.activeTextAuto { background-color:#fff; color:#808080; font-size:12px; padding: 5px; border-width: 1px; border-style: solid; border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; }
+.UIElement .UIEditable .active select.activeSelectAuto { background-color:#fff; color:#808080; font-size:12px; padding: 5px; border-width: 1px; border-style: solid; border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; }
+.UIElement .UIEditable .active { display:none; }
+.UIElement .UIEditable .deactive { display:block; }
+.UIElement .UIEditable .description { color:#ccc; }
+.UIElement .UIEditable .smallNum { font-family:"Verdana"; font-size:11px; margin:0 5px; line-height:20px; color:#36C; }
+
+.UIElement .UIEditable input.Mark { color:#333; ime-mode:disabled; text-transform:uppercase; width:50px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; border-width: 1px; border-style: solid; border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; }
+.UIElement .UIEditable input.Mark:focus { color: #000; border-color: #000; }
+.UIElement .UIEditable input.Mark:disabled { color: #CCC; border-color: #eee; }
+
+.UIElement .UIEditable .alertCell { color:#900 !important;}
+.UIElement .UIEditable .disabledCell { color:#999 !important;}
+.UIElement .UIEditable .blueCell { color:#00F !important;}
+.UIElement .UIEditable .greenCell { color:#18845A !important;}
+.UIElement .UIEditable .orangeCell { color:#F60 !important;}
+.UIElement .UIEditable .pureCell { color:#b44bff !important;}
+.UIElement .UIEditable .brownCell { color:#e1324b !important;}
+
+
+.UIElement .UIEditable a.edit { width:16px; height:16px; display:block; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -48px -110px;}
+.UIElement .UIEditable tr.lastEdited a.edit { background-position: -48px -142px; }
+
+.UIElement .UIEditable a.download { width:16px; height:16px; display:block; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -48px -158px;}
+
+.UIElement .UIEditable a.btn { display:inline-block; line-height:16px; font-size:10px; font-family:"Verdana"; padding:0px 3px; text-decoration:none; border-radius:3px; border:1px solid #fff; }
+
+.UIElement .UIEditable a.btn.increase { color:#036; background-color:#cc9; border-color:#cc9; margin-right:5px; }
+.UIElement .UIEditable a.btn.increase:hover { color:#FFF; background-color:#369; border-color:#369; }
+
+.UIElement .UIEditable a.btn.decrease { color:#FFF; background-color:#09c; border-color:#09c; margin-right:5px; }
+.UIElement .UIEditable a.btn.decrease:hover { background-color:#669; border-color:#669; }
+
+.UIElement .UIEditable a.btn.smax { color:#900; background-color:#fc9; border-color:#fc9; }
+.UIElement .UIEditable a.btn.smax:hover { color:#FFF; background-color:#9cf; border-color:#9cf; }
+
+
+
+.UIElement .UIEditable a.operation { width:16px; height:16px; display:block; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -48px -126px; }
+.UIElement .UIEditable a.operation:link { background-position: -48px -126px; }
+.UIElement .UIEditable a.operation:visited { background-position: -48px -142px; }
+.UIElement .UIEditable a.operation:hover { background-position: -48px -110px; }
+
+.UIElement .UIEditable a.box { display:block; float:left; line-height:18px; margin-top:2px; margin-right:5px; padding:0 5px; text-decoration:none; color:#aaa; border:1px solid #aaa; border-radius:3px; }
+.UIElement .UIEditable a.box:hover { color:#333; border-color:#333; }
+.UIElement .UIEditable a.box.checked { background:#39F; color:#fff; border-color:#39F; }
+
+.UIElement .UIEditable a.pointer { width:16px; height:16px; display:block; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -144px -85px; }
+.UIElement .UIEditable a.pointer:hover { background-position: -102px -67px; }
+
+.UIElement .UIEditable .stat { width:16px; height:16px; display:inline-block; zoom: 1; *display: inline; margin-right:2px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat;}
+.UIElement .UIEditable .stat.checked { background-position: 0px -110px;}
+.UIElement .UIEditable .stat.checkedDisable { background-position: 0px -126px;}
+.UIElement .UIEditable .stat.checkedDone { background-position: 0px -142px;}
+.UIElement .UIEditable .stat.info { background-position: -80px -110px;}
+.UIElement .UIEditable .stat.todo { background-position: -80px -126px;}
+.UIElement .UIEditable .stat.checkout { background-position: -426px -87px;}
+.UIElement .UIEditable .stat.charged { background-position: -481px -33px;}
+.UIElement .UIEditable .stat.basket { background-position: -445px -86px;}
+.UIElement .UIEditable .stat.sign { background-position: -410px -88px;}
+
+.UIElement .UIEditable .stat.running { background-position: -118px -158px;}
+.UIElement .UIEditable .stat.stop { background-position: -118px -174px;}
+
+.UIElement .UIEditable .stat.pay1 { background-position: -517px -51px;}
+.UIElement .UIEditable .stat.pay2 { background-position: -517px -69px;}
+.UIElement .UIEditable .stat.pay3 { background-position: -499px -51px;}
+
+.UIElement .UIEditable .stat.grad- { background-position: -298px 0;}
+.UIElement .UIEditable .stat.grad1 { background-position: 0px -110px; }
+.UIElement .UIEditable .stat.grad0 { background-position: -16px -126px;}
+
+.UIElement .UIEditable .stat.save { cursor:pointer; background-position: 0px -158px;}
+.UIElement .UIEditable .stat.saved { background-position: 0px -174px;}
+
+.UIElement .UIEditable .stat.arrange { background-position: -373px -87px;}
+.UIElement .UIEditable .stat.settime { background-position: -390px -87px;}
+.UIElement .UIEditable .stat.setplace { background-position: -173px -68px;}
+.UIElement .UIEditable .stat.publish { background-position: -246px -86px;}
+.UIElement .UIEditable .stat.clear { background-position: -391px -69px;}
+.UIElement .UIEditable .stat.print { background-position: -101px -175px;}
+.UIElement .UIEditable .stat.examer { background-position: -263px -33px;}
+.UIElement .UIEditable .stat.advisor { background-position: -245px -52px;}
+
+.UIElement .UIEditable .stat.peoples { background-position: -263px -33px;}
+.UIElement .UIEditable .stat.degree { background-position: -482px -86px;}
+
+.UIElement .UIEditable .stat.struct { background-position: -390px -52px;}
+.UIElement .UIEditable .stat.select { background-position: -102px -67px;}
+.UIElement .UIEditable .stat.remove { background-position: -392px -69px;}
+.UIElement .UIEditable .stat.restore { background-position: -427px -69px;}
+.UIElement .UIEditable .stat.details { background-position: -408px -70px;}
+.UIElement .UIEditable .stat.config { background-position: -373px -69px;}
+.UIElement .UIEditable .stat.locked { background-position: -408px -51px;}
+.UIElement .UIEditable .stat.unlock { background-position: -408px -34px;}
+
+.UIElement .UIEditable .stat.waiting { background-position: -32px -110px;}
+.UIElement .UIEditable .stat.edit { cursor:pointer; background-position: -48px -110px;}
+.UIElement .UIEditable .stat.delete { background-position: -16px -110px;}
+
+.UIElement .UIEditable .stat.yes { background-position: -80px -158px;}
+.UIElement .UIEditable .stat.no { background-position: -80px -174px;}
+
+.UIElement .UIEditable .stat.up { background-position: -462px -34px;}
+.UIElement .UIEditable .stat.down { background-position: -462px -52px;}
+
+.UIElement .UIEditable .stat.on { background-position: -64px -158px;}
+.UIElement .UIEditable .stat.off { background-position: -64px -174px;}
+.UIElement .UIEditable .stat.disable { background-position: -33px -174px;}
+
+.UIElement .UIEditable .stat.word { background-position: -422px -108px; margin-right:1px;}
+.UIElement .UIEditable .stat.excel { background-position: -422px -122px; margin-right:1px;}
+.UIElement .UIEditable .stat.outlook { background-position: -422px -136px; margin-right:1px;}
+.UIElement .UIEditable .stat.powerpoint { background-position: -436px -108px; margin-right:1px;}
+.UIElement .UIEditable .stat.access { background-position: -436px -122px; margin-right:1px;} 
+.UIElement .UIEditable .stat.zip { background-position: -436px -136px; margin-right:1px;}
+
+.UIElement .UIEditable .color.excel { color: #74bc20; }
+.UIElement .UIEditable .color.access { color: #d4519b; }
+.UIElement .UIEditable .color.zip { color: #555; }
+
+
+.UIElement .UIBottonRow { margin:9px 0; color:#333333; }
+.UIElement .UIBottonRow i { font-style:normal; font-weight:bold; margin-right:15px; }
+.UIElement .UIBottonRow a { padding:2px 3px; margin-right:6px; color:#333333; }
+
+.UIElement .UIProgressbar { border-bottom:1px solid #F8F8F8; padding:10px 20px 25px 20px; margin: 0 -19px 20px -19px; }
+.UIElement .UIProgressbar p { line-height:30px; }
+
+.UIElement .UIOutputBox { padding-bottom:20px; }
+.UIElement .UIOutputBox p { line-height:20px;}
+.UIElement .UIOutputBox p.warn { color:#F00; }
+.UIElement .UIOutputBox p.notice { color:#009933; }
+
+/* PAGElIST */
+.UIElement .pagination { min-height:18px; width:100%; display:block; background: #F8F8F8;color:#666; border: 1px solid #ddd; margin:5px auto; clear:both; padding: 4px 0px;}
+.UIElement .pagination .summary { font-size:9px; font-family:Verdana; float:left; word-spacing:10px; display:block; padding-left:10px; font-weight:bold; line-height:18px;}
+.UIElement .pagination .lists { font-size:10px; font-family:Verdana; float:right; padding-right:10px;}
+.UIElement .pagination .lists a { background-color: #FFFFFF; color:#2971a7; border: 1px solid #CCC; padding:1px 4px 2px 4px; text-decoration:none; }
+.UIElement .pagination .lists a:hover { background:#2971a7; color:#fff; border: 1px solid #CCC;}
+.UIElement .pagination .lists span { background-color:#FFFFFF; color:#ccc; border: 1px solid #CCC; padding:1px 4px 2px 4px; }
+
+.UIElement .mailBox { padding:5px; clear:both; margin-bottom:20px; }
+.UIElement .mailBox .index { width:80px; float:left; }
+.UIElement .mailBox .index i { font-size:60px; font-family: "Arial"; font-style:normal; color:#EEE; }
+.UIElement .mailBox .box { padding-left:80; margin-left:80px; }
+
+.UIElement .mailBox .main .message { width: 350px; padding: 10px 10px; margin-top: 15px; margin-bottom:2px; background: #2f7ed8; position: relative; border-radius: 10px; }
+.UIElement .mailBox .main .message b { margin-left:30px; font-size: 20px; position: absolute; line-height: 60px; top: -30px; color: #2f7ed8; }
+.UIElement .mailBox .main .message div { line-height:150%; color: #fff; font-size:14px; }
+
+.UIElement .mailBox .main .reply { float:right; width: 350px; padding: 8px 10px; margin-top: 5px; margin-bottom: 10px; background-color: #fff; border: #2f7ed8 3px solid; position: relative; border-radius: 10px; }
+.UIElement .mailBox .main .reply div { line-height:150%; color: #2f7ed8; font-size:14px; }
+.UIElement .mailBox .main .reply span{ margin-left:280px; width: 0; height: 0; font-size: 0; overflow: hidden; position: absolute; }
+.UIElement .mailBox .main .reply span.bot2{ border-width: 18px; border-style: solid dashed dashed; border-color: #2f7ed8 transparent transparent; bottom: -36px; }
+.UIElement .mailBox .main .reply span.top2{ border-width: 18px; border-style: solid dashed dashed; border-color: #fff transparent transparent; bottom: -32px; }
+
+.UIElement .mailBox .main .header { padding-bottom:5px; text-align:left; }
+.UIElement .mailBox .main .footer { padding-top:5px; clear:both; text-align:right; }
+
+.UIElement .mailBox .main .header b, 
+.UIElement .mailBox .main .footer b { padding-right:10px; text-align:right; font-weight:normal; }
+.UIElement .mailBox .main .header span.numeric, 
+.UIElement .mailBox .main .footer span.numeric { font-family:"Verdana"; font-size:10px; color:#333;  }
+
+.UIElement .mailBox .operation { float:right; text-align:right; }
+.UIElement .mailBox .operation a { text-decoration:none; padding:2px 5px; display:inline-block; border-radius:3px; border:1px solid #68b83d; color: #68b83d; }
+.UIElement .mailBox .operation a:hover { background-color:#68b83d; color:#fff; }
+
+.UICircle { border-bottom:1px solid #efefef; margin: 0 -20px; padding: 20px; }
+.UICircle .boxNavigation li { height:50px; list-style:none; float:left; background-image: url('/acadmicRes/assets/graphic/circleStyle.png'); background-repeat: no-repeat;  margin-left:5px; margin-right:5px;  }
+.UICircle .boxNavigation li em { display:block; font-style:normal; font-family:"Arial"; text-align:center; }
+.UICircle .boxNavigation li span { display:block; font-weight:normal; font-family:"Microsoft YaHei", "SimHei"; text-align:center; color: #aaa; }
+
+.UICircle .boxNavigation li.huge { width:200px; height:200px; background-position: -100px -100px; }
+.UICircle .boxNavigation li.huge em { width:200px; font-size:60px; margin-top:55px; color:#e1324b; }
+.UICircle .boxNavigation li.huge span { width:200px; font-size:25px; margin-top:-5px; color:#e1324b; }
+
+.UICircle .boxNavigation li.large { width:150px; height:150px; background-position: -300px -150px; }
+.UICircle .boxNavigation li.large em { width:150px; font-size:40px; margin-top:45px; color:#84b21f; }
+.UICircle .boxNavigation li.large span { width:150px; font-size:16px; margin-top: 0px; color:#84b21f; }
+
+.UICircle .boxNavigation li.large { width:150px; height:150px; background-position: -300px -150px; }
+.UICircle .boxNavigation li.large em { width:150px; font-size:40px; margin-top:45px; color:#84b21f; }
+.UICircle .boxNavigation li.large span { width:150px; font-size:16px; margin-top: 0px; color:#84b21f; }
+
+.UICircle .boxNavigation li.large.deepblue { background-position: -300px -300px; }
+.UICircle .boxNavigation li.large.deepblue em { color: #017cb3; }
+.UICircle .boxNavigation li.large.deepblue span { color: #017cb3; }
+
+.UICircle .boxNavigation li.large.red { background-position: -150px -300px; }
+.UICircle .boxNavigation li.large.red em { color: #e1324b; }
+.UICircle .boxNavigation li.large.red span { color: #e1324b; }
+
+.UICircle .boxNavigation li.large.purple { background-position: -300px -150px; }
+.UICircle .boxNavigation li.large.purple em { color: #b44bff; }
+.UICircle .boxNavigation li.large.purple span { color: #b44bff; }
+
+.UICircle .boxNavigation li.normal { width:100px; height:100px; background-position: 0 0; }
+.UICircle .boxNavigation li.normal em { width:100px; font-size:30px; margin-top:27px; color:#b44bff; }
+.UICircle .boxNavigation li.normal span { width:100px; font-family:"SimSun"; font-size:13px; margin-top:-3px; color:#b44bff; }
+
+.UICircle .boxNavigation li.normal.purple { background-position: 0 0; }
+.UICircle .boxNavigation li.normal.purple em { color: #b44bff; }
+.UICircle .boxNavigation li.normal.purple span { color: #b44bff; }
+
+.UICircle .boxNavigation li.normal.yellow { background-position: 0 -100px; }
+.UICircle .boxNavigation li.normal.yellow em { color: #ffe430; }
+.UICircle .boxNavigation li.normal.yellow span { color: #ffe430; }
+
+.UICircle .boxNavigation li.normal.orange { background-position: -100px 0; }
+.UICircle .boxNavigation li.normal.orange em { color: #ff813d; }
+.UICircle .boxNavigation li.normal.orange span { color: #ff813d; }
+
+.UICircle .boxNavigation li.normal.green { background-position: 0 -200px; }
+.UICircle .boxNavigation li.normal.green em { color: #39ce61; }
+.UICircle .boxNavigation li.normal.green span { color: #39ce61; }
+
+.UICircle .boxNavigation li.normal.blue { background-position: -200px 0; }
+.UICircle .boxNavigation li.normal.blue em { color: #1999f6; }
+.UICircle .boxNavigation li.normal.blue span { color: #1999f6; }
+
+.UICircle .boxNavigation li.normal.deepblue { background-position: 0 -300px ; }
+.UICircle .boxNavigation li.normal.deepblue em { color: #017cb3; }
+.UICircle .boxNavigation li.normal.deepblue span { color: #017cb3; }
+
+.UICircle .boxNavigation li.normal.red { background-position: 0 -400px; }
+.UICircle .boxNavigation li.normal.red em { color: #e1324b; }
+.UICircle .boxNavigation li.normal.red span { color: #e1324b; }
+
+.UICircle .boxNavigation li.small { width:50px; height:50px; background-position: -350px -50px; }
+.UICircle .boxNavigation li.small em { width:50px; font-size:26px; margin-top:10px; color:#1999f6; }
+.UICircle .boxNavigation li.small span { display:none; width:50px; font-family:"SimSun"; font-size:12px; margin-top:15px; }
+
+.UICircle .boxNavigation li.small.describe { margin-bottom:-15px; }
+.UICircle .boxNavigation li.small.describe span { display:block; }
+
+.UICircle .boxNavigation li.small.brown { background-position: -450px 0; }
+.UICircle .boxNavigation li.small.brown em { color: #b25856; }
+.UICircle .boxNavigation li.small.brown span { color: #b25856; }
+
+.UICircle .boxNavigation li.small.red { background-position: -450px -50px; }
+.UICircle .boxNavigation li.small.red em { color: #e33c54; }
+.UICircle .boxNavigation li.small.red span { color: #e33c54; }
+
+.UICircle .boxNavigation li.small.green { background-position: -400px -50px; }
+.UICircle .boxNavigation li.small.green em { color: #97c237; }
+.UICircle .boxNavigation li.small.green span { color: #97c237; }
+
+.UIWizard { border-bottom:1px solid #efefef; margin: 0 -20px; padding: 20px; }
+.UIWizard .stepNavigation li { height:48px; list-style:none; float:left; background-color:#EBEBEB; background-image: url('/acadmicRes/assets/graphic/navBtn.gif'); background-repeat: no-repeat; background-position: right center; }
+.UIWizard .stepNavigation li.current { background-color:#ff8e00; background-image: url('/acadmicRes/assets/graphic/navCurrentBtn.gif'); }
+.UIWizard .stepNavigation li.lastDone { background-color:#2261a0; background-image: url('/acadmicRes/assets/graphic/navLastDoneBtn.gif'); }
+.UIWizard .stepNavigation li.done { background-color:#2261a0; background-image: url('/acadmicRes/assets/graphic/navDoneBtn.gif'); }
+.UIWizard .stepNavigation li a, .stepNavigation li a:link, .stepNavigation li a:visited, .stepNavigation li a:hover, .stepNavigation li a:active { color:#ccc; }
+.UIWizard .stepNavigation li.lastDone a, .stepNavigation li.lastDone a:link, .stepNavigation li.lastDone a:visited, .stepNavigation li.lastDone a:hover, .stepNavigation li.lastDone a:active, .stepNavigation li.current a, .stepNavigation li.current a:link, .stepNavigation li.current a:visited, .stepNavigation li.current a:hover, .stepNavigation li.current a:active, .stepNavigation li.done a, .stepNavigation li.done a:link, .stepNavigation li.done a:visited, .stepNavigation li.done a:hover, .stepNavigation li.done a:active { color:#fff; }
+.UIWizard .stepNavigation li.done a:hover, .stepNavigation li.lastDone a:hover { color:#FFFF99; cursor:hand; }
+.UIWizard .stepNavigation li a em { display:block; margin:6px 0 5px 10px; font-style:normal; font-weight:bold; }
+.UIWizard .stepNavigation li a span { display:block; margin-left:10px; font-weight:normal; font-size: 12px; }
+.UIWizard .stepNavigation li.lastStep { background-image:none; }
+.UIWizard .stepNavigation li a { height:48px; display:block; text-decoration:none; }
+/* .stepNavigation.fiveStep 759*/
+.UIWizard .stepNavigation.fiveStep li { width:151px; }
+.UIWizard .stepNavigation.fiveStep li a { width:151px; }
+.UIWizard .stepNavigation.fiveStep li.lastStep { width:154px; }
+/* .stepNavigation.fourStep 759*/
+.UIWizard .stepNavigation.fourStep li { width:189px; }
+.UIWizard .stepNavigation.fourStep li a { width:189px; }
+.UIWizard .stepNavigation.fourStep li.lastStep { width:192px; }
+/* .stepNavigation.threeStep 759*/
+.UIWizard .stepNavigation.threeStep li { width:253px; }
+.UIWizard .stepNavigation.threeStep li.lastStep { width:253px; }
+.UIWizard .stepNavigation.threeStep li a { width:253px; }
+/* .stepNavigation.twoStep 759*/
+.UIWizard .stepNavigation.twoStep li { width:379px; }
+.UIWizard .stepNavigation.twoStep li a { width:380px; }
+
+/* left Nivigator icons */
+.navOperation { background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; height: 16px; width: 16px; background-position: -100px -86px; }
+.navOperation.openCourse { background-position: -138px -34px; }
+.navOperation.systemManager { background-position: -155px -68px; }
+.navOperation.acadmicBaseInfo { background-position: -320px -33px; }
+.navOperation.studentStatusManager { background-position: -339px -87px; }
+.navOperation.taskManager { background-position: -338px -69px; }
+.navOperation.courseArrange { background-position: -374px -87px; }
+.navOperation.calendarManager { background-position: -320px -69px; }
+.navOperation.markManager, .navOperation.studentMark { background-position: -119px -68px; }
+.navOperation.examArrange { background-position: -444px -51px; }
+.navOperation.teacherPortal { background-position: -338px -34px; }
+.navOperation.studentPortal { background-position: -319px -87px; }
+.navOperation.chooseCourse { background-position: -374px -87px; }
+.navOperation.chooseManager { background-position: -355px -88px; }
+.navOperation.bookBase { background-position: -427px -69px; }
+.navOperation.cetManager, .navOperation.cetApply { background-position: -445px -33px; }
+.navOperation.teacherProfile { background-position: -227px -69px; }
+.navOperation.studentProfile { background-position: -281px -33px; }
+.navOperation.taskMarkManager { background-position: -409px -69px; }
+.navOperation.acadmicWorkLoad { background-position: -264px -52px; }
+.navOperation.voteManager, .navOperation.voteOnline { background-position: -355px -69px; }
+.navOperation.evaluateManager, .navOperation.evaluateOnline, .depEvaluateManager { background-position: -227px -87px; }
+.navOperation.classRoomManager { background-position: -173px -69px; }
+.navOperation.sportManager { background-position: -463px -68px; }
+.navOperation.gradManager { background-position: -355px -51px; }
+.navOperation.reportSystem { background-position: -463px -87px; }
+.navOperation.settlementCenter { background-position: -299px -50px; }
+.navOperation.studentAccount { background-position: -299px -69px; }
+.navOperation.indexNotice { background-position: -499px -33px; }
+
+/* group & authorize icons */
+.auth { display:inline-block; width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; background-position: -226px -32px; }
+.auth.S000 { background-position: -208px -32px; }
+.auth.S001 { background-position: -244px -32px; }
+.auth.SD01, .auth.S002 { background-position: -136px -32px; }
+.auth.AD11, .auth.AD12 { background-position: -208px -68px; }
+.auth.P001 { background-position: -226px -68px; }
+.auth.P002 { background-position: -280px -68px; }
+.auth.A001, .auth.A002, .auth.A003, .auth.A004, .auth.A005, .auth.A006, .auth.A007, .auth.A008, .auth.A009, .auth.A010, .auth.A011, .auth.A012, .auth.A013, .auth.A014 { background-position: -244px -50px; }
+.auth.A000 { background-position: -244px -68px; }
+
+/* CET flag */
+.cetFlag { width:3px; padding:0 !important; margin:0 !important; }
+.cetFlag.CET4 { background-color:#becf69; }
+.cetFlag.CET6 { background-color:#f9e1bb; }
+.cetFlag.CJT4 { background-color:#d7bdf0; }
+.cetFlag.CJT6 { background-color:#f2f1a0; }
+.cetFlag.CRT4 { background-color:#feda7c; }
+.cetFlag.CRT6 { background-color:#d2d7ae; }
+
+/* Progress flag */
+.progressS { color:#090; }
+.progressC { color:#900; }
+
+/* icons App */
+.icon48x48 { display:block; width:48px; height:48px; margin:1px; background-image: url(/acadmicRes/assets/graphic/iconApp.png); background-repeat: no-repeat;}
+.icon48x48.bookSchema { background-position: 0px 0px; }
+.icon48x48.bookOther { background-position: -336px 0px; }
+.icon48x48.bookPlan { background-position: -48px 0px; }
+.icon48x48.bookStockAdd { background-position: -96px 0px; }
+.icon48x48.bookInStock { background-position: -144px 0px; }
+.icon48x48.bookFinance { background-position: -192px 0px; }
+.icon48x48.bookDiscard { background-position: -240px 0px; }
+.icon48x48.bookReference { background-position: -288px 0px; }
+
+.icon48x48.programSchema { background-position: 0 -144px; }
+.icon48x48.planSchema { background-position: -48px -144px; }
+.icon48x48.programCourse { background-position: -96px -144px; }
+.icon48x48.instituteSetting, 
+.icon48x48.organizeAdministration { background-position: -144px -144px; }
+.icon48x48.programTerm { background-position: -192px -144px; }
+
+.icon48x48.classroomResource { background-position: -240px -144px; }
+.icon48x48.classroomType { background-position: -480px -240px; }
+.icon48x48.classroomCoordinate { background-position: -528px -240px; }
+
+.icon48x48.studentProfile { background-position: -288px -144px; }
+.icon48x48.studentPictureManager { background-position: -240px -96px; }
+.icon48x48.studentSubjectDirection { background-position: -336px -144px; }
+.icon48x48.studentMark { background-position: -432px -144px; }
+.icon48x48.studentMarkProve { background-position: -384px -144px; }
+.icon48x48.studentStatusChange { background-position: -288px -96px; }
+.icon48x48.studentSubjectChangeReview { background-position: -432px -48px; }
+.icon48x48.studentLeadGraduate { background-position: -384px -48px; }
+.icon48x48.studentAssistSubject { background-position: -384px -96px; }
+.icon48x48.studentSecondDegree { background-position: -432px -96px; }
+.icon48x48.chargeStudent { background-position: -288px -48px; }
+.icon48x48.studentMarkReview { background-position: -192px -48px; }
+.icon48x48.studentMarkImport { background-position: -336px -288px; }
+.icon48x48.studentClassMerger { background-position: -432px 0; }
+.icon48x48.studentDocument { background-position: -384px 0; }
+.icon48x48.studentInSchoolProve { background-position: -144px -48px; }
+
+.icon48x48.gradReview { background-position: -240px -48px; }
+.icon48x48.gradDegreeReview { background-position: -480px 0; }
+.icon48x48.gradStudent { background-position: -288px -288px; }
+
+.icon48x48.markAnalysis { background-position: -432px -288px; }
+.icon48x48.stuMarkAns01 { background-position: -96px -384px; }
+.icon48x48.stuMarkAns02 { background-position: -144px -384px; }
+
+.icon48x48.stuProfChg23 { background-position: 0 -336px; }
+.icon48x48.stuProfChg03 { background-position: -96px -336px; }
+.icon48x48.stuProfChg11 { background-position: -48px -336px; }
+.icon48x48.stuProfChg12 { background-position: -192px -336px; }
+.icon48x48.stuProfChg32 { background-position: -240px -336px; }
+.icon48x48.stuProfChg24 { background-position: -336px -336px; }
+.icon48x48.stuProfChg22-2 { background-position: -288px -336px; }
+.icon48x48.stuProfChg22-1 { background-position: -384px -336px; }
+.icon48x48.stuProfChg11-1 { background-position: -432px -336px; }
+.icon48x48.stuProfChg12-1 { background-position: 0 -384px; }
+.icon48x48.stuProfChg21-1 { background-position: -48px -384px; }
+
+.icon48x48.teacherProfile { background-position: -384px -288px; }
+.icon48x48.workFuntion { background-position: -528px -192px; }
+.icon48x48.workLoadType { background-position: -576px -192px; }
+.icon48x48.teacherWorkLoad { background-position: -624px -192px; }
+
+.icon48x48.taskSetting { background-position: 0 -96px; }
+.icon48x48.classMerge{ background-position: 0 -192px; }
+.icon48x48.commonTask{ background-position: -48px -192px; }
+.icon48x48.openTask { background-position: -96px -192px; }
+.icon48x48.languageTask { background-position: -144px -192px; }
+.icon48x48.sportTask { background-position: -480px -192px; }
+.icon48x48.reviewTask{ background-position: -432px -192px; }
+.icon48x48.modifyStudentCourse{ background-position: -192px -192px; }
+.icon48x48.chargeStudentCourse{ background-position: -240px -48px; }
+.icon48x48.teacherChange{ background-position: -192px -192px; }
+.icon48x48.taskTempChange{ background-position: -240px -192px; }
+.icon48x48.taskChangeWizardAppend { background-position: -96px -432px; }
+.icon48x48.taskChangeWizardStop { background-position: -48px -432px; }
+.icon48x48.taskChangeWizardPlace { background-position: 0 -432px; }
+
+.icon48x48.teacherCourseTable { background-position: -336px -192px; }
+.icon48x48.classCourseTable { background-position: -384px -192px; }
+.icon48x48.classroomCourseTable { background-position: -336px -192px; }
+.icon48x48.courseTable { background-position: 0 -48px; }
+.icon48x48.courseTask { background-position: -48px -48px; }
+.icon48x48.taskMark { background-position: -96px -48px; }
+.icon48x48.taskMarkResit { background-position: -144px -48px; }
+
+.icon48x48.examSetting { background-position: 0 -96px; }
+.icon48x48.examPlan, .icon48x48.examTask { background-position: 0 -240px; }
+.icon48x48.examCell { background-position: -48px -240px; }
+.icon48x48.examResource { background-position: -96px -240px; }
+.icon48x48.examArrange { background-position: -144px -240px; }
+.icon48x48.examResitCourse { background-position: -240px -240px; }
+.icon48x48.examResitPlan { background-position: -192px -240px; }
+.icon48x48.examResitArrange { background-position: -288px -240px; }
+.icon48x48.examResitResource { background-position: -336px -240px; }
+
+.icon48x48.classRoomUsageRecord { background-position: -288px -192px; }
+.icon48x48.classRoomBorrow { background-position: -528px -48px; }
+
+.icon48x48.voteList { background-position: -432px -240px; }
+.icon48x48.voteAnalysis { background-position: -576px -240px; }
+
+.icon48x48.evaluateSystem { background-position: -432px -240px; }
+.icon48x48.evaluateOptions { background-position: -624px -240px; }
+.icon48x48.evaluateSetting { background-position: -672px -240px; }
+.icon48x48.evaluateStatus { background-position: -576px -240px; }
+.icon48x48.evaluateTask { background-position: -624px -288px; }
+
+.icon48x48.cetReport { background-position: -528px 0; }
+
+.icon48x48.cetSetting { background-position: 0 -96px; }
+.icon48x48.cetImport { background-position: -48px -96px; }
+.icon48x48.cetState { background-position: -96px -96px; }
+.icon48x48.cetPrint { background-position: -144px -96px; }
+.icon48x48.cetAnalyse { background-position: -192px -96px; }
+
+.icon48x48.groupUser { background-position: 0 -288px; }
+.icon48x48.dataCenterSync { background-position: -48px -288px; }
+
+
+/* icons Nav */
+.icon64x64 { display:block; width:64px; height:64px; margin:3px; background-image: url(/acadmicRes/assets/graphic/iconStyle.png); background-repeat: no-repeat;}
+.icon64x64.tasktypeP { background-position: -64px 0px; }
+.icon64x64.tasktypeC { background-position: 0px 0px; }
+.icon64x64.tasktypeT { background-position: -192px -64px; }
+
+.icon64x64.tasktypeR { background-position: -64px -64px; }
+.icon64x64.tasktypeF { background-position: -128px 0px; }
+
+.icon64x64.tasktypeA { background-position: -128px 0px; }
+.icon64x64.tasktypeS { background-position: -192px 0px; }
+.icon64x64.tasktypeE { background-position: -128px -64px; }
+
+
+.icon64x64.BankInstead { background-position: 0px -128px ; }
+.icon64x64.Cash { background-position: -64px -128px; }
+.icon64x64.Save { background-position: -128px -128px; }
+
+.icon64x64.studentReview { background-position: -128px -256px; }
+
+.icon64x64.studentMarkPrint { background-position: 0px -192px ; }
+.icon64x64.studentMarkPassPrint { background-position: -64px -192px ; }
+.icon64x64.studentMarkEnglishPrint { background-position: -128px -192px ; }
+
+/* */
+.iconProg { display:inline-block; width:15px; height:8px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat;}
+.iconProg.L1 { background-position: -136px -142px; }
+.iconProg.L2 { background-position: -136px -152px; }
+.iconProg.L3 { background-position: -136px -162px; }
+.iconProg.L4 { background-position: -136px -172px; }
+.iconProg.L5 { background-position: -136px -182px; }
+.iconProg.A1 { background-position: -186px -142px; }
+.iconProg.A2 { background-position: -186px -152px; }
+.iconProg.A3 { background-position: -186px -162px; }
+.iconProg.A4 { background-position: -186px -172px; }
+.iconProg.A5 { background-position: -186px -182px; }
+
+
+
+/* head Operation icons */
+.icon16x16 { display:inline-block; width:16px; height:16px; margin-right:6px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat;}
+.icon16x16.edit { background-position: -100px -50px; }
+.icon16x16.info { background-position: -136px -51px; }
+.icon16x16.message { background-position: -154px -51px; }
+.icon16x16.link { background-position: -101px -68px; }
+.icon16x16.card { background-position: -137px -68px; }
+.icon16x16.application { background-position: -118px -68px; }
+.icon16x16.collection { background-position: -338px -88px; }
+.icon16x16.people { background-position: -337px -52px; }
+.icon16x16.course { background-position: -338px -34px; }
+.icon16x16.program { background-position: -338px -70px; }
+.icon16x16.subject { background-position: -356px -34px; }
+.icon16x16.direct { background-position: -354px -50px; }
+.icon16x16.campus { background-position: -172px -50px; }
+.icon16x16.building { background-position: -172px -68px; }
+.icon16x16.courseTable { background-position: -320px -69px; }
+.icon16x16.setting { background-position: -374px -34px; }
+.icon16x16.db { background-position: -244px -34px; }
+.icon16x16.mark { background-position: -245px -87px; }
+.icon16x16.bar { background-position: -228px -88px; }
+.icon16x16.exam { background-position: -444px -51px; }
+.icon16x16.config { background-position: -373px -69px; }
+.icon16x16.picture { background-position: -155px -33px; }
+.icon16x16.report { background-position: -462px -86px; }
+.icon16x16.settlement { background-position: -444px -69px; }
+
+.icon10x10 { display:inline-block; width:10px; height:10px; margin-right:6px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat;}
+.icon10x10.execute { background-position: -80px -66px; }
+.icon10x10.browser { background-position: -80px -79px; }
+.icon10x10.home { background-position: -80px -91px; }
+
+
+/* bottons */
+.uiOperationBox { text-align:right; margin-bottom:10px; }
+.uiOperationButton { display:inline-block; padding:1px 3px; background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -249px;background-color:#eee;border:1px solid #999;border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1);cursor:pointer; }
+.uiOperationButton .btnText { padding-left:5px; height:16px; display:inline-block; line-height:18px; color:#000000; }
+.uiOperationButton .btn { width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; }
+.uiOperationButton .btn.execute {  background-position: -372px -32px;}
+.uiOperationButton .btn.append {  background-position: -372px -50px;}
+.uiOperationButton .btn.check {  background-position: -80px -158px;}
+
+/* botton Icons */
+.btnAdd { width:8px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -88px -35px; }
+.btnAddWhite { width:8px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -80px -34px; }
+.btnRemove { width:8px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -120px -108px; }
+.btnPublish { width:12px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -80px -50px; }
+.btnList { width:14px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -136px -109px; }
+.btnWord { width:11px; height:11px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -160px -110px; }
+.btnDownload { width:14px; height:15px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -50px -160px; }
+.btnClear { width:10px; height:13px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -160px -157px; }
+.btnPrint { width:16px; height:15px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -101px -176px; }
+.btnCalendar { cursor:pointer; width:25px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -117px -87px; }
+.btnSearch { cursor:pointer; width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -390px -32px; }
+.btnPlus { cursor:pointer; overflow:hidden; text-indent:18px; width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -426px -50px; }
+.btnMinus { cursor:pointer; overflow:hidden; text-indent:18px; width:18px; height:18px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -426px -32px; }
+.btnCampus { width:14px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -173px -70px; }
+.btnDate { width:14px; height:14px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -173px -89px; }
+.btnExecute { width:12px; height:12px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -136px -121px; }
+.btnExecuteWhite { width:12px; height:12px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -149px -121px; }
+
+.btnShow { width:12px; height:12px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -428px -53px; }
+.btnHide { width:12px; height:12px; background-image: url('/acadmicRes/assets/graphic/blueStyle.png'); background-repeat: no-repeat; display: inline-block; background-position: -428px -35px; }
+
+/* Table Form */
+.formTable { display:block; clear:both; margin:1px 0px; padding: 1px; border: 1px solid #F0F0F0; border-radius: 5px; background: #fdfdfd; }
+.formTable .typeDate { display:inline; ime-mode:disabled; text-transform:uppercase; width:70px; margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+
+/* Router Form */
+
+.formRouter { display:block; }
+.formRouter a, .formRouter span { display:inline-block; text-decoration:none; line-height:16px; }
+.formRouter a.botton { padding:2px 5px; border-radius: 3px; line-height:16px; background:#69C; color:#FFFFFF;  }
+
+.formRouter a.botton1 { padding:1px 5px; font-family:"Verdana"; font-size:11px; margin-right:5px; border-radius: 3px; border:1px solid #F60; color:#F60;  }
+.formRouter span.botton1 { padding:2px 5px; font-family:"Verdana"; font-size:11px; margin-right:5px; border-radius: 3px; background:#F60; color:#FFFFFF;  }
+
+.formRouter a.botton2 { padding:1px 5px;  border-radius: 3px; border:1px solid #F60; color:#F60;  }
+.formRouter span.botton2 { padding:2px 5px; line-height:16px; border-radius: 3px; background:#F60; color:#FFFFFF; }
+.formRouter .smallNum { font-family:"Verdana"; font-size:10px; color:#000; }
+
+/* EA FORM */
+
+.formWrapper { display:block; clear:both; padding: 15px 5px 25px 5px; border: 1px solid #F0F0F0; background: #FCFCFC;}
+
+.formWrapper.Transparent { padding:15px 0; background-color:transparent; border-color:transparent; }
+.formWrapper.Mini { padding:5px 0; }
+
+.formWrapper p.notice {color:#999; display:block; float: none; margin-left:160px; padding-bottom:6px; padding-top:1px; }
+.formWrapper p.notice1 {color:#900; display:block; float: none; margin-left:160px; padding-bottom:6px; padding-top:10px; }
+.formWrapper p.notice2 {color:#999; display:block; float: none; padding-bottom:6px; padding-top:1px; }
+.formWrapper div.label { color:#666; display:block; padding-bottom:10px; /*clear:both;*/zoom: 1; clear:both; }
+.formWrapper div.label:after { clear: both; content: "."; display: block; font-size: 0; height: 0; line-height: 0; visibility: hidden; }
+
+.formWrapper div.label b { color:#666; font-weight:bold; display:block; width:150px; height:25px; float:left; padding-left:6px; padding-top:6px; }
+.formWrapper span.req { color:#f00; font-weight:normal; display:block; font-size:10px; width:2px; float:left; margin-left:-2px; padding-top:6px; }
+
+.formWrapper hr { border-bottom: 1px solid #E6E6E6 !important; margin-bottom: 10px; height:1px !important; }
+
+.formWrapper input, 
+.formWrapper select, 
+.formWrapper textarea { font-size:12px; color: #6A6969; border-width: 1px; border-style: solid; border-color: #D4D4D4 #EBEBEB #EBEBEB #D4D4D4; background-color:#FFFFFF; }
+
+.formWrapper input:focus, 
+.formWrapper select:focus, 
+.formWrapper textarea:focus { color: #7BA857; background: #EFFAE6; }
+
+.formWrapper input.typeError, .formWrapper textarea.typeError, .formWrapper select.typeError { border-color:#960 #970 #970 #960; background-color:#FFC; color:#000; }
+.formWrapper input.typeDisable, .formWrapper textarea.typeDisable, .formWrapper select.typeDisable { border-color:#EEE #EEE #EEE #EEE; background-color:#F3F3F3; color:#CCC; }
+
+.formWrapper div.label div.secondRow { margin-left:158px; }
+.formWrapper div.label div.secondRow p.notice { margin-left:0; }
+.formWrapper div.label div.secondRow table { border-collapse:collapse; margin:10px 0px 20px 0px; font-family:"Arial","SimSun"; color:#888; }
+.formWrapper div.label div.secondRow table thead td { padding:0px 8px 0px 3px; line-height:25px; color:#000; }
+.formWrapper div.label div.secondRow table tbody td { padding:3px 8px 3px 3px; line-height:25px; border-top:1px solid #efefef; border-bottom:1px solid #efefef; }
+.formWrapper div.label div.secondRow table tbody td.numeric { font-family:"Verdana"; font-size:10px; color:#633; }
+.formWrapper div.label div.secondRow table input { margin-left:0; }
+
+.formWrapper div.label input, 
+.formWrapper div.label textarea {  padding: 5px; display:block; width:360px; margin-left:158px; margin-bottom:5px; font-size:12px; line-height:15px;}
+.formWrapper div.label select {  padding: 5px 2px; display:block;  width:auto; margin-left:158px; line-height:15px; }
+
+.formWrapper div.label select.inlinePart { display:inline; margin-left:2px; }
+.formWrapper div.label input.inlinePart { display:inline; margin-left:2px; }
+
+.formWrapper div.label textarea { height:180px; width:530px; }
+.formWrapper div.label textarea.comment { margin-left:0; height:180px; width:530px; }
+
+.formWrapper div.label input.typeText { font-family:"SimSun"; margin:5px 2px; padding: 3px 3px; height:15px; }
+.formWrapper div.label input.typeTextReadOnly { padding: 5px 0 !important; color:#000; border:1px solid #F8F8F8; background-color:transparent; height:15px; }
+.formWrapper div.label input.typeTextReadOnly:focus { border:1px solid #F8F8F8; background-color:transparent; } 
+
+.formWrapper div.label input.typeDate { display:inline; ime-mode:disabled; text-transform:uppercase; width:85px; margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+
+.formWrapper div.label input.typeTextDynamic { display:inline; width:160px; margin:5px 2px; padding: 1px 3px; height:18px; color:#000; border:1px solid #CCC; background-color:transparent; }
+.formWrapper div.label input.typeTextDynamic:focus { color:#000; border:1px solid #CCC; background-color:transparent; }
+
+.formWrapper div.label input.typeCharInt { display:inline; ime-mode:disabled; text-transform:uppercase; width:10px; margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+
+.formWrapper div.label input.typeTinyInt { display:inline; ime-mode:disabled; text-transform:uppercase; width:28px; margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typeSmallInt { display:inline; ime-mode:disabled; text-transform:uppercase; width:50px; margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typeTinyText { display:inline; text-transform:uppercase;width:60px;  margin:5px 2px; padding: 3px 3px; font-family:"SimSun"; font-size:12px; vertical-align:middle; height:15px; }
+
+.formWrapper div.label input.typePinYinIdx { color:#333; display:inline; ime-mode:disabled; text-transform:uppercase; width:80px;  margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typePYFirst { color:#333; display:inline; ime-mode:disabled; text-transform:uppercase; width:15px;  margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+
+.formWrapper div.label input.typeTime { display:inline; ime-mode:disabled; text-transform:uppercase; width:35px; margin:5px 2px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+
+.formWrapper div.label input.typeIDCard { color:#333; ime-mode:disabled; text-transform:uppercase; width:130px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typeISBN { color:#333; ime-mode:disabled; text-transform:uppercase; width:110px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typeCode { color:#333; ime-mode:disabled; text-transform:uppercase; width:80px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typeMobile { color:#333; ime-mode:disabled; text-transform:uppercase; width:140px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px; }
+.formWrapper div.label input.typeTextShort { width:260px; margin:5px 2px; padding: 3px 3px; height:15px; }
+.formWrapper div.label input.typeTextTiny { width:80px; margin:5px 2px; padding: 3px 3px; height:15px; }
+
+.formWrapper div.label input.typeEnglish { color:#333; ime-mode:disabled; width:260px; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px;}
+.formWrapper div.label input.typeEnglishName { color:#333; ime-mode:disabled; width:100px; text-transform:capitalize; padding: 3px 3px; font-family:"Verdana"; font-size:11px; vertical-align:middle; height:15px;}
+
+
+.formWrapper div.label input.typeRadio { display:inline; margin:5px 0; padding:0 1px; width:auto; background-color:transparent; border-style:none; }
+.formWrapper div.label input.typeCheckbox { display:inline; margin:5px 0; padding:0 1px; width:auto; background-color:transparent; border-style:none; }
+
+.formWrapper a.button2 { text-decoration:none; font: bold 12px Arial, Sans-serif; line-height:24px; height: 24px; margin-left: 20px; padding: 5px 8px 5px 8px; color: #FFF; background:#900; border: solid 1px #999; border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1);  }
+.formWrapper a.button { text-decoration:none; font: bold 12px Arial, Sans-serif; line-height:24px; height: 24px; margin-left: 20px; padding: 5px 8px 5px 8px; color: #FFF; background:#093; border: solid 1px #999; border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1);  }
+
+.formWrapper input.button { cursor:pointer; font: bold 12px Arial, Sans-serif; height: 25px; margin: 0; margin-left:5px; padding: 2px 8px 2px 8px; color: #FFF; background:#B4DB6F; background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -200px; background-color:#eee;border:1px solid #999;border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1); }
+.formWrapper input.button1 { cursor:pointer; font: bold 12px Arial, Sans-serif; height: 25px; margin: 0; padding: 2px 8px 2px 8px; color: #FFF; background:#5c75a9; background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -298px; background-color:#eee;border:1px solid #999;border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1); }
+.formWrapper input.button2 { cursor:pointer; font: bold 12px Arial, Sans-serif; height: 25px; margin-left: 20px; padding: 2px 8px 2px 8px; color: #FFF; background:#900; border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1); }
+.formWrapper input.button3 { cursor:pointer; font: normal 12px Arial, Sans-serif; line-height:18px; margin-left: 20px; padding: 0px 8px; color: #FFF; background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -200px; background-color:#eee;border:1px solid #999;border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1); }
+.formWrapper input.button4 { cursor:pointer; font: bold 12px Arial, Sans-serif; height: 25px; margin: 0; padding: 2px 8px 2px 8px; color: #FFF; background:#900; border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1); }
+.formWrapper input.button5 { cursor:pointer; font: bold 12px Arial, Sans-serif; height: 25px; margin-left:160px; padding: 2px 8px 2px 8px; color: #FFF; background:#900; border-bottom-color:#888;-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1); }
+
+.formWrapper input.disabled { cursor:text; background-image:url('/acadmicRes/assets/graphic/blueStyle.png');background-repeat:no-repeat;background-position:0 -249px;background-color:#eee; border:1px solid #ccc; }
